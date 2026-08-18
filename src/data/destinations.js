@@ -1,3 +1,5 @@
+import hundruImg from '../assets/hundru-waterfall.jpg';
+
 export const DESTINATIONS = [
     {
         id: "hundru-falls",
@@ -9,11 +11,11 @@ export const DESTINATIONS = [
         distanceKm: 45,
         tagline: "Jharkhand's spectacular 320 ft cascading leap over the Subarnarekha River.",
         description: "Located on the Subarnarekha River, Hundru Falls drops from a height of 98 metres (320 ft), creating one of the most breathtaking natural spectacles in Eastern India. Surrounded by dense chhatra forests, the falling water forms a serene pool at the base ideal for eco-tourists and nature lovers.",
-        heroImage: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80",
+        heroImage: hundruImg,
         images: [
+            hundruImg,
             "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
+            "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80"
         ],
         bestTime: "October to March",
         entryFee: "₹20 per person",
