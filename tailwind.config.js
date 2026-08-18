@@ -37,8 +37,8 @@ export default {
         danger: '#B4432E',
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Lora', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['var(--font-heading)', '"Fraunces"', '"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['var(--font-body)', '"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'warm-sm': '0 2px 8px rgba(43, 36, 32, 0.05)',

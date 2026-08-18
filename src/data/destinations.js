@@ -1,4 +1,10 @@
 import hundruImg from '../assets/hundru-waterfall.jpg';
+import baidyanathImg from '../assets/baidyanath-dham.jpg';
+import patratuImg from '../assets/patratu-valley.jpg';
+import betlaImg from '../assets/betla-park.jpg';
+import netarhatImg from '../assets/netarhat.jpg';
+import patratuDamImg from '../assets/patratu-dam.png';
+import parasnathImg from '../assets/parasnath.jpg';
 
 export const DESTINATIONS = [
     {
@@ -36,9 +42,9 @@ export const DESTINATIONS = [
         distanceKm: 165,
         tagline: "One of India's earliest tiger reserves with ancient Chero Dynasty forts inside.",
         description: "Spanning over 1,000 sq km of lush sal and bamboo forests, Betla was among the first sanctuaries in India to come under Project Tiger in 1973. It is home to wild elephants, tigers, leopards, Indian bison (gaur), and over 170 bird species, with 16th-century historical fort ruins nested inside the canopy.",
-        heroImage: "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80",
+        heroImage: betlaImg,
         images: [
-            "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1000&q=80",
+            betlaImg,
             "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80",
             "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1000&q=80"
         ],
@@ -61,10 +67,11 @@ export const DESTINATIONS = [
         distanceKm: 250,
         tagline: "Sacred 12 Jyotirlinga shrine revered by millions of pilgrims worldwide.",
         description: "Baba Baidyanath Dham in Deoghar is one of the twelve revered Jyotirlingas of Lord Shiva in India. Famous for the annual Shravani Mela, where millions of devotees carry holy Ganga water from Sultanganj barefoot to offer to the deity.",
-        heroImage: "https://images.unsplash.com/photo-1609946782759-810d64f1c571?auto=format&fit=crop&w=1200&q=80",
+        heroImage: baidyanathImg,
         images: [
-            "https://images.unsplash.com/photo-1609946782759-810d64f1c571?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=80"
+            baidyanathImg,
+            "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1621831971412-d227f425b035?auto=format&fit=crop&w=1000&q=80"
         ],
         bestTime: "October to March (or July-Aug for Mela)",
         entryFee: "Free Entry",
@@ -85,8 +92,9 @@ export const DESTINATIONS = [
         distanceKm: 156,
         tagline: "Serene hill station perched at 3,700 ft surrounded by pine and sal valleys.",
         description: "Netarhat is Jharkhand's premier hill destination, famed for its breathtaking Magnolia Sunset Point, Pine Forests, and crisp mountain breeze. Perched high on the Chotanagpur plateau, it offers an unspoiled retreat into pristine forests and tribal villages.",
-        heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+        heroImage: netarhatImg,
         images: [
+            netarhatImg,
             "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
             "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80"
         ],
@@ -109,9 +117,10 @@ export const DESTINATIONS = [
         distanceKm: 35,
         tagline: "Winding serpentine hairpin curves overlooking a sprawling emerald reservoir.",
         description: "Famous for its mesmerizing winding mountain roads reminiscent of European alpine passes, Patratu Valley leads down to a massive dam reservoir offering speedboat rides, floating restaurants, and island eco-parks.",
-        heroImage: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
+        heroImage: patratuDamImg,
         images: [
-            "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=80",
+            patratuDamImg,
+            patratuImg,
             "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80"
         ],
         bestTime: "September to March",
@@ -133,8 +142,9 @@ export const DESTINATIONS = [
         distanceKm: 160,
         tagline: "Highest peak of Jharkhand (4,478 ft) and sacred Jain pilgrimage destination.",
         description: "Parasnath Hill is the tallest mountain peak in Jharkhand state. Revered as Shikharji, 20 out of 24 Jain Tirthankaras attained Moksha (liberation) here. The 27-km mountain trek passes through cloud forests, stone stupas, and ancient marble temples.",
-        heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+        heroImage: parasnathImg,
         images: [
+            parasnathImg,
             "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
             "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1000&q=80"
         ],

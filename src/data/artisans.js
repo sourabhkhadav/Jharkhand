@@ -8,7 +8,7 @@ export const ARTISANS = [
         price: 3200,
         rating: 4.9,
         reviewsCount: 45,
-        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
         description: "Authentic handmade painting using natural white kaolin (Dudhi clay), manganese black, and red ochre earth pigments on handmade handmade tree bark paper.",
         dimensions: "18 x 24 inches",
         badge: "GI Tag Certified"

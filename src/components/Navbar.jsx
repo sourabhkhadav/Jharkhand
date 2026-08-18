@@ -42,7 +42,7 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
                             <span className="font-serif font-bold text-lg sm:text-xl text-ink tracking-tight whitespace-nowrap">Explore</span>
                             <span className="font-serif font-bold text-lg sm:text-xl text-primary whitespace-nowrap">Jharkhand</span>
                         </div>
-                        <p className="text-[9px] tracking-wider uppercase font-bold text-secondary-dark leading-tight mt-0.5 whitespace-nowrap">Govt Eco & Cultural Tourism</p>
+                        <p className="text-[9px] tracking-widest uppercase font-semibold text-secondary-dark leading-tight mt-0.5 whitespace-nowrap">Govt Eco & Cultural Tourism</p>
                     </div>
                 </Link>
 
@@ -54,8 +54,8 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`text-xs font-bold tracking-tight transition-colors duration-150 relative py-1 whitespace-nowrap ${isActive
-                                    ? 'text-primary'
+                                className={`text-xs font-semibold tracking-wide transition-colors duration-150 relative py-1 whitespace-nowrap ${isActive
+                                    ? 'text-primary font-bold'
                                     : 'text-ink-light hover:text-primary'
                                     }`}
                             >

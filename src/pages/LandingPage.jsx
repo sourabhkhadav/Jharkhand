@@ -306,10 +306,47 @@ export default function LandingPage({ onOpenBooking }) {
                 </div>
             </section>
 
-            {/* CATEGORY CHIPS STRIP — Appears Cleanly On Scroll */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                <div className="bg-cream-card rounded-3xl p-4 sm:p-6 border border-warmborder shadow-warm-sm">
-                    <FilterChips activeCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
+            {/* FEATURED DESTINATIONS BY INTEREST — INTERACTIVE FILTER GRID */}
+            <section className="py-14 sm:py-20 bg-cream-card border-b border-warmborder relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                    {/* Section Header — Giant Font Size with Short 2-Line Text (Matching Image 1 Scale) */}
+                    <div className="text-center space-y-3 mb-10 max-w-4xl mx-auto">
+                        <p className="font-sans text-[#999999] font-light text-xs sm:text-sm tracking-[0.25em] uppercase flex items-center justify-center gap-3">
+                            <span className="w-8 sm:w-12 h-[1px] bg-gray-300"></span>
+                            <span>UNCOVER JHARKHAND</span>
+                            <span className="w-8 sm:w-12 h-[1px] bg-gray-300"></span>
+                        </p>
+                        <h2 className="font-sans font-black text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tight text-[#CCCCCC] leading-none drop-shadow-sm space-y-1">
+                            <span className="block">EXPLORE</span>
+                            <span className="block">DESTINATIONS</span>
+                        </h2>
+                        <p className="font-sans text-xs sm:text-sm text-ink-light leading-relaxed max-w-xl mx-auto font-normal pt-2">
+                            Select a category below to discover waterfalls, ancient shrines, wildlife reserves, or tribal heritage spots.
+                        </p>
+                    </div>
+
+                    {/* Filter Chips Bar */}
+                    <div className="flex justify-start sm:justify-center overflow-x-auto scrollbar-none py-1">
+                        <FilterChips activeCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
+                    </div>
+
+                    {/* Live Filtered Destination Cards Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-2">
+                        {filteredDestinations.map((dest) => (
+                            <DestinationCard key={dest.id} destination={dest} />
+                        ))}
+                    </div>
+
+                    {/* Bottom CTA */}
+                    <div className="text-center pt-2">
+                        <Link
+                            to={`/explore${selectedCategory !== 'all' ? `?cat=${selectedCategory}` : ''}`}
+                            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold text-xs sm:text-sm px-8 py-3 rounded-full shadow-warm-md transition hover:scale-105"
+                        >
+                            <span>Browse All Destinations</span>
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </div>
                 </div>
             </section>
 
@@ -767,16 +804,6 @@ export default function LandingPage({ onOpenBooking }) {
                     </div>
                 </div>
             </section>
-
-            {/* Floating Right Sticky Booking Action Button (Incredible India Signature Style) */}
-            <div
-                onClick={() => onOpenBooking({ title: "Custom Jharkhand Itinerary", price: "Govt Certified" })}
-                className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-primary hover:bg-primary-dark text-white font-bold text-xs uppercase px-3 py-6 rounded-l-2xl shadow-2xl flex items-center justify-center tracking-widest cursor-pointer border-l-2 border-y-2 border-cream/30 transition-all hover:pr-4 group"
-                style={{ writingMode: 'vertical-rl', transform: 'translateY(-50%) rotate(180deg)' }}
-                title="Book Your Travel"
-            >
-                <span className="group-hover:scale-105 transition-transform">Book Your Travel</span>
-            </div>
         </div>
     );
 }

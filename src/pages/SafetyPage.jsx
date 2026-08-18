@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { DESTINATION_SAFETY, USER_SAFETY_ALERTS } from '../data/safetyData';
-import SectionHeader from '../components/SectionHeader';
-import { ShieldCheck, AlertTriangle, ThumbsUp, CloudSun, MapPin, Plus, CheckCircle, X } from 'lucide-react';
+import { ShieldCheck, AlertTriangle, ThumbsUp, CloudSun, MapPin, Plus, CheckCircle, X, Activity, Radio, Info } from 'lucide-react';
 
 export default function SafetyPage() {
     const [alerts, setAlerts] = useState(USER_SAFETY_ALERTS);
@@ -36,107 +35,181 @@ export default function SafetyPage() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-            {/* Header Banner */}
-            <div className="bg-cream-dark rounded-3xl p-6 sm:p-10 border border-warmborder space-y-4">
-                <SectionHeader
-                    eyebrow="SMART GOVERNANCE & SAFETY"
-                    title="Live Crowding & Tourist Advisory Feed"
-                    subtitle="Real-time status updates on waterfall water flows, temple pilgrim queues, and weather advisories across Jharkhand."
-                />
+            {/* Header Banner - Executive Governance Dashboard Aesthetic */}
+            <div className="bg-gradient-to-r from-cream-card via-cream to-cream-dark rounded-3xl p-6 sm:p-8 border border-warmborder shadow-warm-md relative overflow-hidden">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+                    <div className="space-y-2 max-w-2xl text-left">
+                        <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 px-3.5 py-1 rounded-full text-secondary text-[11px] font-semibold tracking-wider uppercase">
+                            <ShieldCheck className="w-3.5 h-3.5 text-secondary" />
+                            <span>Official JTDC Tourist Advisory Hub</span>
+                        </div>
+                        <h1 className="font-serif font-bold text-3xl sm:text-4xl text-ink tracking-tight">
+                            Live Crowding & Safety Control
+                        </h1>
+                        <p className="text-xs sm:text-sm text-ink-light leading-relaxed font-normal">
+                            Real-time monitoring across 24 districts for waterfall water levels, pilgrim queues at Baidyanath Dham, and hill weather advisories.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
+                        <button
+                            onClick={() => setIsReportModalOpen(true)}
+                            className="bg-primary hover:bg-primary-dark text-white font-semibold text-xs px-5 py-3 rounded-full shadow-warm-md flex items-center gap-2 transition hover:scale-105"
+                        >
+                            <Plus className="w-4 h-4" />
+                            <span>Submit Advisory</span>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             {/* WEATHER & LIVE DESTINATION STATUS GRID */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                 {/* Weather Forecast Widget */}
-                <div className="bg-secondary text-cream rounded-3xl p-6 shadow-xl border-4 border-accent/20 space-y-4">
-                    <div className="flex justify-between items-start">
-                        <div>
-                            <span className="text-[10px] uppercase font-bold text-accent tracking-wider">Regional Weather Forecast</span>
-                            <h3 className="font-serif font-bold text-2xl text-white">Chotanagpur Plateau</h3>
-                            <p className="text-xs text-cream/80">Ranchi, Latehar & Netarhat</p>
+                <div className="bg-secondary-dark text-cream rounded-3xl p-6 sm:p-7 shadow-xl border border-secondary flex flex-col justify-between space-y-6">
+                    <div className="space-y-4">
+                        <div className="flex justify-between items-start">
+                            <div>
+                                <span className="text-[10px] uppercase font-semibold text-accent tracking-widest block mb-1">
+                                    REGIONAL WEATHER
+                                </span>
+                                <h3 className="font-sans font-bold text-2xl text-white tracking-tight">
+                                    Chotanagpur Plateau
+                                </h3>
+                                <p className="text-xs text-cream/70 mt-0.5">Ranchi, Latehar & Netarhat</p>
+                            </div>
+                            <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-md">
+                                <CloudSun className="w-8 h-8 text-accent animate-pulse" />
+                            </div>
                         </div>
-                        <CloudSun className="w-10 h-10 text-accent animate-pulse" />
+
+                        <div className="py-4 border-y border-cream/15 flex items-center justify-between">
+                            <div>
+                                <span className="font-sans text-4xl font-extrabold text-white tracking-tight">24°C</span>
+                                <p className="text-xs text-accent font-semibold mt-1">Pleasant & Sunny</p>
+                            </div>
+                            <div className="text-right text-xs text-cream/80 space-y-1">
+                                <p><span className="text-cream/50">Humidity:</span> 58%</p>
+                                <p><span className="text-cream/50">Wind Speed:</span> 12 km/h</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="py-4 border-y border-cream/15 flex items-center justify-between">
-                        <span className="font-serif text-4xl font-bold text-white">24°C</span>
-                        <div className="text-right text-xs text-cream/90">
-                            <p className="font-bold text-accent">Pleasant & Sunny</p>
-                            <p>Humidity: 58% | Wind: 12 km/h</p>
-                        </div>
+                    <div className="bg-white/10 rounded-2xl p-3.5 border border-white/10 flex items-start gap-3">
+                        <Info className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                        <p className="text-xs text-cream/90 leading-relaxed font-normal">
+                            Ideal season for waterfall trekking. Chilly evening breeze expected in Netarhat hills after 6:00 PM.
+                        </p>
                     </div>
-
-                    <p className="text-xs text-cream/80 leading-relaxed">
-                        Ideal season for waterfall trekking. Chilly breeze expected in Netarhat hills after 6:00 PM.
-                    </p>
                 </div>
 
-                {/* Live Crowd Indicators Table */}
-                <div className="lg:col-span-2 bg-cream-card rounded-3xl p-6 border border-warmborder shadow-warm-sm space-y-4">
-                    <div className="flex justify-between items-center border-b border-warmborder pb-3">
-                        <h3 className="font-serif font-bold text-lg text-ink">Popular Spots Crowd Status</h3>
-                        <span className="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2.5 py-0.5 rounded-full">
-                            Live Sensor Sync Active
-                        </span>
+                {/* Live Crowd Indicators Grid */}
+                <div className="lg:col-span-2 bg-cream-card rounded-3xl p-6 sm:p-7 border border-warmborder shadow-warm-sm space-y-5">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-warmborder/80 pb-4">
+                        <div>
+                            <h3 className="font-sans font-bold text-xl text-ink tracking-tight">
+                                Popular Spots Crowd Status
+                            </h3>
+                            <p className="text-xs text-ink-light">Real-time visitor density updated every 15 minutes</p>
+                        </div>
+                        <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 text-[11px] font-semibold px-3 py-1 rounded-full border border-emerald-200 self-start sm:self-auto">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                            <span>Live Sensor Sync Active</span>
+                        </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {DESTINATION_SAFETY.map((spot) => (
-                            <div key={spot.id} className="p-3 bg-cream rounded-2xl border border-warmborder space-y-2 text-xs">
-                                <div className="flex justify-between items-center font-bold text-ink">
-                                    <span>{spot.name}</span>
-                                    <span className={`px-2 py-0.5 rounded-full text-[10px] ${spot.level === 'green' ? 'bg-emerald-100 text-emerald-800' : spot.level === 'yellow' ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800'
-                                        }`}>
-                                        {spot.status} ({spot.visitorDensity})
-                                    </span>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {DESTINATION_SAFETY.map((spot) => {
+                            const isGreen = spot.level === 'green';
+                            const isYellow = spot.level === 'yellow';
+
+                            return (
+                                <div
+                                    key={spot.id}
+                                    className="p-4 bg-cream/70 rounded-2xl border border-warmborder hover:border-primary/40 transition-all space-y-2.5 text-left"
+                                >
+                                    <div className="flex items-center justify-between gap-2">
+                                        <h4 className="font-sans font-bold text-sm text-ink truncate">
+                                            {spot.name}
+                                        </h4>
+                                        <span
+                                            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide uppercase shrink-0 border ${isGreen
+                                                ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                                                : isYellow
+                                                    ? 'bg-amber-50 text-amber-800 border-amber-200'
+                                                    : 'bg-rose-50 text-rose-800 border-rose-200'
+                                                }`}
+                                        >
+                                            <span
+                                                className={`w-1.5 h-1.5 rounded-full ${isGreen ? 'bg-emerald-500' : isYellow ? 'bg-amber-500' : 'bg-rose-500'
+                                                    }`}
+                                            />
+                                            <span>{spot.status} ({spot.visitorDensity})</span>
+                                        </span>
+                                    </div>
+                                    <p className="text-xs text-ink-light leading-relaxed font-normal">
+                                        {spot.advisory}
+                                    </p>
                                 </div>
-                                <p className="text-[11px] text-ink-light leading-snug">{spot.advisory}</p>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </div>
 
             {/* USER ADVISORY & ALERT FEED */}
             <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-warmborder pb-4">
                     <div>
-                        <h2 className="font-serif font-bold text-2xl text-ink">Live Traveler Alert Feed</h2>
-                        <p className="text-xs text-ink-light">User-submitted safety tips, road updates, and queue reports.</p>
+                        <h2 className="font-serif font-bold text-2xl text-ink tracking-tight">
+                            Live Traveler Alert Feed
+                        </h2>
+                        <p className="text-xs text-ink-light">Community-verified safety tips, road conditions, and queue updates.</p>
                     </div>
 
                     <button
                         onClick={() => setIsReportModalOpen(true)}
-                        className="bg-primary hover:bg-primary-dark text-white font-bold text-xs px-6 py-3 rounded-full shadow-warm-md flex items-center gap-2 transition"
+                        className="bg-cream-dark hover:bg-warmborder text-secondary border border-secondary/30 font-semibold text-xs px-5 py-2.5 rounded-full shadow-sm flex items-center gap-2 transition shrink-0"
                     >
-                        <Plus className="w-4 h-4" />
-                        <span>Report an Issue / Alert</span>
+                        <Radio className="w-4 h-4 text-primary" />
+                        <span>Post Community Alert</span>
                     </button>
                 </div>
 
                 <div className="space-y-4">
                     {alerts.map((alert) => (
-                        <div key={alert.id} className="bg-cream-card rounded-2xl p-5 border border-warmborder shadow-warm-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                            <div className="space-y-2 max-w-3xl">
-                                <div className="flex items-center gap-2">
-                                    <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${alert.type.includes('Govt') ? 'bg-secondary text-white' : 'bg-amber-100 text-amber-800'
-                                        }`}>
+                        <div
+                            key={alert.id}
+                            className="bg-cream-card rounded-2xl p-5 border border-warmborder shadow-warm-sm hover:shadow-warm-md transition flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                        >
+                            <div className="space-y-2 max-w-3xl text-left">
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <span
+                                        className={`text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full ${alert.type.includes('Govt')
+                                            ? 'bg-secondary text-white'
+                                            : 'bg-amber-100 text-amber-800 border border-amber-200'
+                                            }`}
+                                    >
                                         {alert.type}
                                     </span>
                                     <span className="text-xs font-bold text-ink">{alert.location}</span>
-                                    <span className="text-[10px] text-ink-muted">• {alert.timestamp}</span>
+                                    <span className="text-[11px] text-ink-muted">• {alert.timestamp}</span>
                                 </div>
 
-                                <p className="text-xs text-ink-light leading-relaxed">{alert.text}</p>
-                                <p className="text-[11px] font-semibold text-ink-muted">Posted by: {alert.author}</p>
+                                <p className="text-xs sm:text-sm text-ink-light leading-relaxed font-normal">
+                                    {alert.text}
+                                </p>
+                                <p className="text-[11px] font-medium text-ink-muted">
+                                    Posted by: <span className="font-semibold text-ink">{alert.author}</span>
+                                </p>
                             </div>
 
                             <button
                                 onClick={() => handleUpvote(alert.id)}
-                                className="flex items-center gap-1.5 bg-cream-dark hover:bg-warmborder text-ink font-bold text-xs px-4 py-2 rounded-full border border-warmborder transition whitespace-nowrap"
+                                className="flex items-center justify-center gap-2 bg-cream hover:bg-warmborder text-ink font-semibold text-xs px-4 py-2.5 rounded-full border border-warmborder transition whitespace-nowrap shrink-0 self-start sm:self-auto"
                             >
                                 <ThumbsUp className="w-3.5 h-3.5 text-primary" />
-                                <span>Upvote ({alert.upvotes})</span>
+                                <span>Helpful ({alert.upvotes})</span>
                             </button>
                         </div>
                     ))}
@@ -147,7 +220,10 @@ export default function SafetyPage() {
             {isReportModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
                     <div className="bg-cream border border-warmborder rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative space-y-4">
-                        <button onClick={() => setIsReportModalOpen(false)} className="absolute top-4 right-4 p-2 text-ink-light hover:text-ink">
+                        <button
+                            onClick={() => setIsReportModalOpen(false)}
+                            className="absolute top-4 right-4 p-2 text-ink-light hover:text-ink rounded-full"
+                        >
                             <X className="w-5 h-5" />
                         </button>
 
@@ -172,7 +248,7 @@ export default function SafetyPage() {
                                         placeholder="e.g. Dassam Falls Parking or Deoghar Temple"
                                         value={newReport.location}
                                         onChange={(e) => setNewReport({ ...newReport, location: e.target.value })}
-                                        className="w-full px-3 py-2 rounded-xl border border-warmborder bg-white text-ink"
+                                        className="w-full px-3 py-2.5 rounded-xl border border-warmborder bg-white text-ink focus:outline-none focus:ring-2 focus:ring-primary"
                                     />
                                 </div>
 
@@ -181,7 +257,7 @@ export default function SafetyPage() {
                                     <select
                                         value={newReport.type}
                                         onChange={(e) => setNewReport({ ...newReport, type: e.target.value })}
-                                        className="w-full px-3 py-2.5 rounded-xl border border-warmborder bg-white text-ink font-sans"
+                                        className="w-full px-3 py-2.5 rounded-xl border border-warmborder bg-white text-ink font-sans focus:outline-none focus:ring-2 focus:ring-primary"
                                     >
                                         <option value="Crowd Update">Crowd Update</option>
                                         <option value="Weather / Caution">Weather / Caution</option>
@@ -197,13 +273,13 @@ export default function SafetyPage() {
                                         placeholder="Provide details..."
                                         value={newReport.text}
                                         onChange={(e) => setNewReport({ ...newReport, text: e.target.value })}
-                                        className="w-full px-3 py-2 rounded-xl border border-warmborder bg-white text-ink"
+                                        className="w-full px-3 py-2 rounded-xl border border-warmborder bg-white text-ink focus:outline-none focus:ring-2 focus:ring-primary"
                                     ></textarea>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-primary hover:bg-primary-dark text-white font-bold text-xs py-3 rounded-full shadow"
+                                    className="w-full bg-primary hover:bg-primary-dark text-white font-semibold text-xs py-3 rounded-full shadow-warm-md transition"
                                 >
                                     Publish Alert to Feed
                                 </button>

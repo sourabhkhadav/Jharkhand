@@ -20,21 +20,25 @@ export default function DestinationCard({ destination }) {
                     alt={name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80";
+                    }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
 
                 {/* Top Badges */}
                 <div className="absolute top-3 left-3 right-3 flex justify-between items-center gap-2">
-                    <span className="bg-secondary/90 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow">
+                    <span className="bg-secondary/90 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full shadow">
                         {category}
                     </span>
-                    <div className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border backdrop-blur-md ${crowdColors[crowdLevel] || crowdColors.green}`}>
-                        Live Status: {crowdStatus}
+                    <div className={`px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase border backdrop-blur-md ${crowdColors[crowdLevel] || crowdColors.green}`}>
+                        Live: {crowdStatus}
                     </div>
                 </div>
 
                 {/* Distance Badge */}
-                <div className="absolute bottom-3 left-3 text-white text-xs font-medium flex items-center gap-1">
+                <div className="absolute bottom-3 left-3 text-white text-xs font-medium tracking-tight flex items-center gap-1">
                     <MapPin className="w-3.5 h-3.5 text-accent" />
                     <span>{district} ({distanceKm} km from capital)</span>
                 </div>
@@ -44,10 +48,10 @@ export default function DestinationCard({ destination }) {
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                 <div>
                     <div className="flex items-center justify-between gap-2 mb-1">
-                        <h3 className="font-serif font-bold text-lg text-ink group-hover:text-primary transition-colors line-clamp-1">
+                        <h3 className="font-serif font-bold text-lg text-ink tracking-tight group-hover:text-primary transition-colors line-clamp-1">
                             {name}
                         </h3>
-                        <div className="flex items-center gap-1 bg-accent/15 px-2 py-0.5 rounded text-xs font-bold text-ink">
+                        <div className="flex items-center gap-1 bg-accent/15 px-2 py-0.5 rounded text-xs font-semibold text-ink">
                             <Star className="w-3.5 h-3.5 fill-accent text-accent" />
                             <span>{rating}</span>
                         </div>
@@ -58,10 +62,10 @@ export default function DestinationCard({ destination }) {
                 </div>
 
                 <div className="pt-2 border-t border-warmborder/60 flex items-center justify-between">
-                    <span className="text-[11px] text-ink-muted">{reviewsCount} tourist reviews</span>
+                    <span className="text-[11px] font-medium text-ink-muted">{reviewsCount} tourist reviews</span>
                     <Link
                         to={`/place/${id}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-dark transition"
+                        className="inline-flex items-center gap-1 text-xs font-semibold tracking-wide text-primary group-hover:text-primary-dark transition"
                     >
                         <span>Discover more</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
