@@ -86,22 +86,22 @@ export default function LandingPage({ onOpenBooking }) {
                     </div>
 
                     {/* Quick Stats Strip */}
-                    <div className="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto text-cream">
-                        <div className="border-r border-cream/25 pr-2">
-                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">50+</p>
-                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Waterfalls & Springs</p>
+                    <div className="pt-5 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-cream">
+                        <div className="border-r border-cream/20 pr-2">
+                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent drop-shadow">50+</p>
+                            <p className="text-[11px] uppercase font-semibold tracking-wider text-cream/90 mt-0.5">Waterfalls & Springs</p>
                         </div>
-                        <div className="sm:border-r border-cream/25 pr-2">
-                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">1,000 sq km</p>
-                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Sal Forest Reserve</p>
+                        <div className="sm:border-r border-cream/20 pr-2">
+                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent drop-shadow">1,000 sq km</p>
+                            <p className="text-[11px] uppercase font-semibold tracking-wider text-cream/90 mt-0.5">Sal Forest Reserve</p>
                         </div>
-                        <div className="border-r border-cream/25 pr-2">
-                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">32 Tribes</p>
-                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Living Traditions</p>
+                        <div className="border-r border-cream/20 pr-2">
+                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent drop-shadow">32 Tribes</p>
+                            <p className="text-[11px] uppercase font-semibold tracking-wider text-cream/90 mt-0.5">Living Traditions</p>
                         </div>
                         <div className="pl-2">
-                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">3,700 ft</p>
-                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Netarhat Plateau</p>
+                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent drop-shadow">3,700 ft</p>
+                            <p className="text-[11px] uppercase font-semibold tracking-wider text-cream/90 mt-0.5">Netarhat Plateau</p>
                         </div>
                     </div>
                 </div>
