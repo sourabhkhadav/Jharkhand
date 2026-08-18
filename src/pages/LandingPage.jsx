@@ -86,22 +86,22 @@ export default function LandingPage({ onOpenBooking }) {
                     </div>
 
                     {/* Quick Stats Strip */}
-                    <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-cream/80 text-xs">
-                        <div className="border-r border-cream/20">
-                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent">50+</p>
-                            <p className="text-[11px] uppercase tracking-wider">Waterfalls & Springs</p>
+                    <div className="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto text-cream">
+                        <div className="border-r border-cream/25 pr-2">
+                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">50+</p>
+                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Waterfalls & Springs</p>
                         </div>
-                        <div className="sm:border-r border-cream/20">
-                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent">1,000 sq km</p>
-                            <p className="text-[11px] uppercase tracking-wider">Sal Forest Reserve</p>
+                        <div className="sm:border-r border-cream/25 pr-2">
+                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">1,000 sq km</p>
+                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Sal Forest Reserve</p>
                         </div>
-                        <div className="border-r border-cream/20">
-                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent">32 Tribes</p>
-                            <p className="text-[11px] uppercase tracking-wider">Living Traditions</p>
+                        <div className="border-r border-cream/25 pr-2">
+                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">32 Tribes</p>
+                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Living Traditions</p>
                         </div>
-                        <div>
-                            <p className="font-serif text-xl sm:text-2xl font-bold text-accent">3,700 ft</p>
-                            <p className="text-[11px] uppercase tracking-wider">Netarhat Plateau</p>
+                        <div className="pl-2">
+                            <p className="font-serif text-3xl sm:text-5xl font-bold text-accent drop-shadow-md">3,700 ft</p>
+                            <p className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-cream/90 mt-1">Netarhat Plateau</p>
                         </div>
                     </div>
                 </div>
