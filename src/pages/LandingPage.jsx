@@ -53,10 +53,6 @@ export default function LandingPage({ onOpenBooking }) {
                         Discover the Soul of <span className="text-primary italic">Jharkhand</span>
                     </h1>
 
-                    <p className="text-sm sm:text-lg text-cream/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow">
-                        Immerse in cascading 300ft waterfalls, ancient 12th Jyotirlinga shrines, primeval elephant forests, and UNESCO GI-tagged Santhal mud art.
-                    </p>
-
                     {/* Search Bar & Near Me Bar */}
                     <div className="max-w-3xl mx-auto bg-cream/95 backdrop-blur-md p-3 sm:p-4 rounded-3xl sm:rounded-full shadow-2xl border border-warmborder flex flex-col sm:flex-row items-center gap-3 text-ink">
                         <form onSubmit={handleSearchSubmit} className="flex-1 flex items-center gap-2 px-3 w-full">
