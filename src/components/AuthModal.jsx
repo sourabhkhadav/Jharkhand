@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, User, ShieldCheck, Compass, CheckCircle } from 'lucide-react';
+import logoLeaf from '../assets/logo-leaf.jpg';
 
 export default function AuthModal({ isOpen, onClose }) {
     const [role, setRole] = useState('tourist'); // tourist | guide | artisan
@@ -36,8 +37,8 @@ export default function AuthModal({ isOpen, onClose }) {
                 ) : (
                     <div className="space-y-6">
                         <div className="text-center space-y-1">
-                            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto text-primary mb-2">
-                                <Compass className="w-6 h-6" />
+                            <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-2 shadow-warm-sm">
+                                <img src={logoLeaf} alt="Jharkhand Tourism Emblem" className="w-full h-full object-cover" />
                             </div>
                             <h3 className="font-serif font-bold text-2xl text-ink">Tourism Portal Sign In</h3>
                             <p className="text-xs text-ink-light">Access official Jharkhand eco-tourism features</p>

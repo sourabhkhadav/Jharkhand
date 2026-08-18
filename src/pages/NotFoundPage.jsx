@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, ArrowLeft } from 'lucide-react';
+import logoLeaf from '../assets/logo-leaf.jpg';
 
 export default function NotFoundPage() {
     return (
         <div className="min-h-[70vh] flex items-center justify-center px-4 py-16 text-center">
             <div className="bg-cream-card rounded-3xl p-8 sm:p-12 border border-warmborder shadow-warm-md max-w-md w-full space-y-6">
-                <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto">
-                    <Compass className="w-8 h-8 animate-spin-slow" />
+                <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center mx-auto shadow-warm-sm">
+                    <img src={logoLeaf} alt="Explore Jharkhand Emblem" className="w-full h-full object-cover" />
                 </div>
 
                 <div className="space-y-2">

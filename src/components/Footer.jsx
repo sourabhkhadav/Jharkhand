@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Mail, Phone, MapPin, ShieldCheck, ExternalLink, Heart } from 'lucide-react';
+import logoLeaf from '../assets/logo-leaf.jpg';
 
 export default function Footer() {
     const districts = ["Ranchi", "Latehar", "Deoghar", "Ramgarh", "Giridih", "Hazaribagh", "East Singhbhum", "Khunti", "Gumla", "Chaibasa"];
@@ -12,9 +13,11 @@ export default function Footer() {
                     {/* Brand & Govt Badge */}
                     <div className="lg:col-span-2 space-y-4">
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
-                                <Compass className="w-6 h-6" />
-                            </div>
+                            <img
+                                src={logoLeaf}
+                                alt="Jharkhand Eco Tourism Logo"
+                                className="w-10 h-10 rounded-full object-cover shadow-warm-sm flex-shrink-0"
+                            />
                             <div>
                                 <span className="font-serif font-bold text-2xl text-white">Explore </span>
                                 <span className="font-serif font-bold text-2xl text-accent">Jharkhand</span>

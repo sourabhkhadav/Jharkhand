@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MapPin, Search, Calendar, ShoppingBag, ShieldCheck, User, Menu, X, Sparkles, Compass } from 'lucide-react';
+import logoLeaf from '../assets/logo-leaf.jpg';
 
 export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,9 +32,11 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-3">
                 {/* Brand Logo */}
                 <Link to="/" className="flex items-center gap-2.5 group flex-shrink-0">
-                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shadow-warm-sm group-hover:scale-105 transition-transform flex-shrink-0">
-                        <Compass className="w-4 h-4 animate-pulse" />
-                    </div>
+                    <img
+                        src={logoLeaf}
+                        alt="Explore Jharkhand Logo"
+                        className="w-9 h-9 rounded-full object-cover shadow-warm-sm group-hover:scale-105 transition-transform flex-shrink-0"
+                    />
                     <div className="flex-shrink-0">
                         <div className="flex items-center gap-1 leading-none">
                             <span className="font-serif font-bold text-lg sm:text-xl text-ink tracking-tight whitespace-nowrap">Explore</span>
