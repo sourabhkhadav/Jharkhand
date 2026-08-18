@@ -43,18 +43,6 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
                     </div>
                 </Link>
 
-                {/* Global Search Bar (Desktop) */}
-                <form onSubmit={handleSearchSubmit} className="hidden md:flex items-center relative max-w-[220px] lg:max-w-xs w-full flex-shrink">
-                    <input
-                        type="text"
-                        placeholder="Search waterfalls, temples, Sohrai..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full pl-8 pr-3 py-1.5 text-xs rounded-full bg-cream-dark/70 border border-warmborder focus:outline-none focus:ring-1 focus:ring-primary focus:bg-white text-ink transition-all placeholder:text-ink-muted"
-                    />
-                    <Search className="w-3.5 h-3.5 text-ink-light absolute left-2.5 pointer-events-none" />
-                </form>
-
                 {/* Desktop Nav Links */}
                 <nav className="hidden lg:flex items-center gap-4 xl:gap-5 flex-shrink-0">
                     {navLinks.map((link) => {
