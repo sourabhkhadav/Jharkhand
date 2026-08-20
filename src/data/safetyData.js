@@ -67,6 +67,13 @@ export const DESTINATION_WEATHER_HAZARDS = [
     }
 ];
 
+export const DESTINATION_SAFETY = DESTINATION_WEATHER_HAZARDS.map(spot => ({
+    id: spot.id,
+    name: spot.name,
+    level: spot.hazardLevel === 'Clear' ? 'green' : spot.hazardLevel === 'Caution' ? 'yellow' : 'red',
+    status: spot.hazardType || spot.roadStatus
+}));
+
 export const USER_HAZARD_ALERTS = [
     {
         id: "alert-1",
