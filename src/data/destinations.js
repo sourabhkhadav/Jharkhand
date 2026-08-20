@@ -1,11 +1,3 @@
-import hundruImg from '../assets/hundru-waterfall.jpg';
-import baidyanathImg from '../assets/baidyanath-dham.jpg';
-import patratuImg from '../assets/patratu-valley.jpg';
-import betlaImg from '../assets/betla-park.jpg';
-import netarhatImg from '../assets/netarhat.jpg';
-import patratuDamImg from '../assets/patratu-dam.png';
-import parasnathImg from '../assets/parasnath.jpg';
-
 export const DESTINATIONS = [
     {
         id: "hundru-falls",
@@ -17,9 +9,8 @@ export const DESTINATIONS = [
         distanceKm: 45,
         tagline: "Jharkhand's spectacular 320 ft cascading leap over the Subarnarekha River.",
         description: "Located on the Subarnarekha River, Hundru Falls drops from a height of 98 metres (320 ft), creating one of the most breathtaking natural spectacles in Eastern India. Surrounded by dense chhatra forests, the falling water forms a serene pool at the base ideal for eco-tourists and nature lovers.",
-        heroImage: hundruImg,
+        heroImage: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80",
         images: [
-            hundruImg,
             "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=80",
             "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80"
         ],
@@ -27,7 +18,7 @@ export const DESTINATIONS = [
         entryFee: "₹20 per person",
         timings: "6:00 AM - 5:00 PM",
         crowdStatus: "Medium",
-        crowdLevel: "yellow", // green | yellow | red
+        crowdLevel: "yellow",
         coordinates: { lat: 23.4474, lng: 85.6548 },
         highlights: ["320 ft Cascade", "Tribal Handicrafts Stalls", "Natural Rock Formations", "Trekking Trails"],
         facilities: ["Parking Available", "Local Food Stalls", "Govt. Lifeguard Guarded", "Clean Restrooms"],
@@ -37,218 +28,42 @@ export const DESTINATIONS = [
             era: "Prehistoric Chotanagpur Plateau Formation",
             architecturalStyle: "Natural Escarpment Cascade & Chotanagpur Gneiss Rocks",
             historyStory: "Formed by the vertical faulting of the Chotanagpur Plateau, Hundru Falls represents millions of years of geological erosion where the Subarnarekha River breaks through ancient metamorphic rocks.",
-            originLegend: "According to local Santhal tribal lore, the Subarnarekha ('Streak of Gold') river was named after golden sands washed down from natural quartz veins. Tribal ancestors considered the roaring spray of Hundru a sacred cleansing abode of Marang Buru (Supreme Forest Spirit).",
-            archivalTrivia: "British colonial surveyors in 1874 documented Hundru as one of the highest drop cascades in the Bengal Presidency, noting that local tribal hunters used vine ropes to gather rare medicinal herbs growing behind the waterfall's mist curtain.",
-            audioGuideSummary: "You are standing before Hundru Falls, a 320-foot drop where the river Subarnarekha plunges into a ancient rock pool surrounded by Sal tree forests."
+            originLegend: "According to local Santhal tribal lore, the Subarnarekha ('Streak of Gold') river was named after golden sands washed down from natural quartz veins.",
+            archivalTrivia: "British colonial surveyors in 1874 documented Hundru as one of the highest drop cascades in the Bengal Presidency.",
+            audioGuideSummary: "You are standing before Hundru Falls, a 320-foot drop where the river Subarnarekha plunges into an ancient rock pool."
         }
     },
     {
-        id: "betla-national-park",
-        name: "Betla National Park & Sanctuary",
+        id: "lodh-falls",
+        name: "Lodh Falls (Burha Falls)",
         district: "Latehar",
-        category: "Wildlife",
+        category: "Waterfalls",
         rating: 4.9,
-        reviewsCount: 512,
-        distanceKm: 165,
-        tagline: "One of India's earliest tiger reserves with ancient Chero Dynasty forts inside.",
-        description: "Spanning over 1,000 sq km of lush sal and bamboo forests, Betla was among the first sanctuaries in India to come under Project Tiger in 1973. It is home to wild elephants, tigers, leopards, Indian bison (gaur), and over 170 bird species, with 16th-century historical fort ruins nested inside the canopy.",
-        heroImage: betlaImg,
+        reviewsCount: 280,
+        distanceKm: 195,
+        tagline: "Highest waterfall in Jharkhand dropping 469 ft inside deep tiger canopy.",
+        description: "Lodh Falls (also known as Burha Falls) is the highest waterfall in Jharkhand state and the 21st highest in India, dropping 143 metres (469 ft) in multiple roaring tiers over the Burha River inside the dense Palamu forest sanctuary.",
+        heroImage: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
         images: [
-            betlaImg,
-            "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1000&q=80"
-        ],
-        bestTime: "November to May",
-        entryFee: "₹100 (Safari extra)",
-        timings: "6:00 AM - 4:30 PM",
-        crowdStatus: "Low",
-        crowdLevel: "green",
-        coordinates: { lat: 23.8864, lng: 84.1901 },
-        highlights: ["Elephant Safari", "Chero Fort Ruins", "Wild Bison Sighting", "Forest Watchtowers"],
-        facilities: ["Govt Eco Lodges", "Safari Jeep Rental", "Certified Tribal Guides", "Canteen"],
-        history: {
-            builtYear: "1613 AD (Forts) / 1973 (Tiger Reserve)",
-            builtBy: "Raja Medini Ray (Chero Kingdom)",
-            era: "17th Century Chero Dynasty & Modern Eco-Conservation",
-            architecturalStyle: "Indo-Islamic & Tribal Stone Fortress Architecture",
-            historyStory: "Betla houses two massive 16th-century twin forts constructed deep inside the jungle by the Chero rulers, Medini Ray and Pratap Ray. The region served as a sovereign tribal kingdom before being integrated into Project Tiger in 1973.",
-            originLegend: "Legend tells of King Medini Ray, known as the 'Just Sovereign of Palamu', who built Nagpuri gate with stone carvings that could not be breached by Mughal artillery. Local folklore holds that subterranean tunnels still connect the twin forts.",
-            archivalTrivia: "The acronym B.E.T.L.A stands for Bison, Elephant, Tiger, Leopard, and Axis (Spotted Deer), coined during the inauguration of Project Tiger in 1973.",
-            audioGuideSummary: "Explore Betla, where 400-year-old stone fort ruins of the Chero Dynasty emerge from dense Sal tiger reserves."
-        }
-    },
-    {
-        id: "baidyanath-dham",
-        name: "Baidyanath Dham Temple",
-        district: "Deoghar",
-        category: "Spiritual",
-        rating: 4.9,
-        reviewsCount: 1240,
-        distanceKm: 250,
-        tagline: "Sacred 12 Jyotirlinga shrine revered by millions of pilgrims worldwide.",
-        description: "Baba Baidyanath Dham in Deoghar is one of the twelve revered Jyotirlingas of Lord Shiva in India. Famous for the annual Shravani Mela, where millions of devotees carry holy Ganga water from Sultanganj barefoot to offer to the deity.",
-        heroImage: baidyanathImg,
-        images: [
-            baidyanathImg,
-            "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1621831971412-d227f425b035?auto=format&fit=crop&w=1000&q=80"
-        ],
-        bestTime: "October to March (or July-Aug for Mela)",
-        entryFee: "Free Entry",
-        timings: "4:00 AM - 9:00 PM",
-        crowdStatus: "High",
-        crowdLevel: "red",
-        coordinates: { lat: 24.4925, lng: 86.6997 },
-        highlights: ["12th Jyotirlinga", "Panchshool Gold Crest", "Historic Complex", "Cultural Crafts Market"],
-        facilities: ["Sugam Darshan Pass", "Shoe Counters", "Prasad Stalls", "Govt Information Desk"],
-        history: {
-            builtYear: "1596 AD (Present Structure) / Ancient Vedic Antiquity",
-            builtBy: "Raja Puran Mal of Gidhaur / Vishwakarma Mythological Lineage",
-            era: "Vedic Era & 16th Century Nagara Temple Renaissance",
-            architecturalStyle: "Classical North Indian Nagara Style with Gold Panchshool",
-            historyStory: "The current main temple of Baidyanath was constructed in 1596 AD by Raja Puran Mal of the Gidhaur dynasty. The complex consists of 22 temples dedicated to various deities interconnected with red silk ribbons.",
-            originLegend: "According to Shiva Purana, Demon King Ravana performed intense penance in the Himalayas, severing nine of his heads to Shiva. Pleased, Shiva cured Ravana's heads (hence 'Baidyanath' or Divine Physician) and granted him the Kamada Linga on condition he never set it on the ground before reaching Lanka. Lord Ganesha disguised as a cowherd held the linga when Ravana went to perform evening prayers, grounding it forever at Deoghar.",
-            archivalTrivia: "Unlike all other 11 Jyotirlingas which carry a Trishul on top, Baidyanath Temple features a unique five-pronged golden 'Panchshool', which is believed to protect the holy shrine from lighting strikes.",
-            audioGuideSummary: "Welcome to Baba Baidyanath Dham, a 16th-century Nagara temple housing one of India's 12 divine Jyotirlingas."
-        }
-    },
-    {
-        id: "netarhat-queen-of-chotanagpur",
-        name: "Netarhat — Queen of Chotanagpur",
-        district: "Latehar",
-        category: "Eco Tourism",
-        rating: 4.9,
-        reviewsCount: 680,
-        distanceKm: 156,
-        tagline: "Serene hill station perched at 3,700 ft surrounded by pine and sal valleys.",
-        description: "Netarhat is Jharkhand's premier hill destination, famed for its breathtaking Magnolia Sunset Point, Pine Forests, and crisp mountain breeze. Perched high on the Chotanagpur plateau, it offers an unspoiled retreat into pristine forests and tribal villages.",
-        heroImage: netarhatImg,
-        images: [
-            netarhatImg,
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80"
-        ],
-        bestTime: "Year-Round",
-        entryFee: "Free",
-        timings: "Open 24 hrs",
-        crowdStatus: "Low",
-        crowdLevel: "green",
-        coordinates: { lat: 23.4833, lng: 84.2667 },
-        highlights: ["Magnolia Sunset Point", "Netarhat Residential School", "Pine Forest Trails", "Lower Ghaghri Falls"],
-        facilities: ["JTDC Prabhat Vihar Hotel", "Tea Stalls", "Trekking Trails", "Viewpoints"],
-        history: {
-            builtYear: "Early 20th Century (1900s) / Ancient Asur Tribal Settlement",
-            builtBy: "British Governor Sir Charles Elliot / Indigenous Asur Tribe",
-            era: "Colonial Hill Retreat & Ancient Metallurgy Tradition",
-            architecturalStyle: "British Bungalow & Eco-Woodland Architecture",
-            historyStory: "Originally an indigenous homeland of the Asur tribal artisans known for ancient iron smelting, Netarhat was developed into a summer retreat by British officials in the early 1900s due to its cool 3,700 ft altitude.",
-            originLegend: "The famous 'Magnolia Point' is named after an English lady named Magnolia who fell in love with a local tribal musician named Flute Player. As legend tells, societal boundaries prevented their union, leading Magnolia to leap off the cliff on horseback.",
-            archivalTrivia: "Netarhat Residential School, established in 1954, is famous as an incubator of India's top scientists, IAS officers, and scholars.",
-            audioGuideSummary: "Perched at 3,700 feet, Netarhat was developed in the early 1900s amidst ancient Asur tribal iron smelting heritage."
-        }
-    },
-    {
-        id: "patratu-valley",
-        name: "Patratu Valley & Dam Lake",
-        district: "Ramgarh",
-        category: "Adventure",
-        rating: 4.7,
-        reviewsCount: 450,
-        distanceKm: 35,
-        tagline: "Winding serpentine hairpin curves overlooking a sprawling emerald reservoir.",
-        description: "Famous for its mesmerizing winding mountain roads reminiscent of European alpine passes, Patratu Valley leads down to a massive dam reservoir offering speedboat rides, floating restaurants, and island eco-parks.",
-        heroImage: patratuDamImg,
-        images: [
-            patratuDamImg,
-            patratuImg,
-            "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80"
+            "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80"
         ],
         bestTime: "September to March",
-        entryFee: "₹30 for Dam Park",
-        timings: "8:00 AM - 6:30 PM",
-        crowdStatus: "Medium",
-        crowdLevel: "yellow",
-        coordinates: { lat: 23.6333, lng: 85.2833 },
-        highlights: ["Serpentine Valley Drive", "Speedboat & Jet Ski", "Island Resort Park", "Sunset Viewpoints"],
-        facilities: ["Boating Club", "Food Court", "Water Sports", "Parking"],
-        history: {
-            builtYear: "1962 AD (Dam & Valley Road Enginearing)",
-            builtBy: "Russian Engineers & Government of India",
-            era: "Post-Independence Industrial & Civil Infrastructure",
-            architecturalStyle: "Modern Civil Engineering Serpentine Pass",
-            historyStory: "Constructed in 1962 with Soviet collaboration to supply cooling water to the Patratu Thermal Power Station, the dam transformed the Nalkari river basin into a massive 81 sq km lake surrounded by forested ghats.",
-            originLegend: "Local elders recount how the valley was once an impassable jungle inhabited by leopards and wild boar before engineers blasted 22 hairpin bends into the cliffside.",
-            archivalTrivia: "The valley road cut through Chotanagpur granite features 360-degree panoramic loops that are widely used in Indian cinema automotive shoots.",
-            audioGuideSummary: "Built in 1962 with Soviet engineering expertise, Patratu Dam transformed the Nalkari valley into a scenic water reservoir."
-        }
-    },
-    {
-        id: "parasnath-shikharji",
-        name: "Parasnath Hill (Shikharji)",
-        district: "Giridih",
-        category: "Spiritual",
-        rating: 4.9,
-        reviewsCount: 890,
-        distanceKm: 160,
-        tagline: "Highest peak of Jharkhand (4,478 ft) and sacred Jain pilgrimage destination.",
-        description: "Parasnath Hill is the tallest mountain peak in Jharkhand state. Revered as Shikharji, 20 out of 24 Jain Tirthankaras attained Moksha (liberation) here. The 27-km mountain trek passes through cloud forests, stone stupas, and ancient marble temples.",
-        heroImage: parasnathImg,
-        images: [
-            parasnathImg,
-            "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1000&q=80"
-        ],
-        bestTime: "October to March",
-        entryFee: "Free",
-        timings: "Open 24 hrs for pilgrims",
+        entryFee: "₹30",
+        timings: "7:00 AM - 5:00 PM",
         crowdStatus: "Low",
         crowdLevel: "green",
-        coordinates: { lat: 23.9625, lng: 86.1558 },
-        highlights: ["4,478 ft Summit Trek", "Tonk Temple Shrines", "Cloud Valley Views", "Santhal Tribal Sacred Groves"],
-        facilities: ["Palanquin (Doli) Service", "Rest Huts", "Drinking Water Stations", "Dharamshalas"],
+        coordinates: { lat: 23.5417, lng: 84.0322 },
+        highlights: ["469 ft Highest Drop", "Virgin Sal Canopy Trek", "Burha River Gorge", "Photographers Paradise"],
+        facilities: ["Forest Guard Escort", "Parking", "View Deck"],
         history: {
-            builtYear: "Ancient Vedic / Jain Canon (8th Century BC)",
-            builtBy: "Jain Monastic Guilds & Santhal Ancestoral Guardians",
-            era: "Antiquity & Classical Jain Architectural Era",
-            architecturalStyle: "White Marble Tonk Shrines & Tribal Sacred Grove Sanctuaries",
-            historyStory: "Named after Lord Parshvanatha, the 23rd Tirthankara who attained nirvana here in the 8th century BC. Out of 24 Jain Tirthankaras, 20 attained ultimate spiritual liberation on these peaks.",
-            originLegend: "To the indigenous Santhal people, the mountain is Marang Buru ('The Great Mountain God'). Santhals celebrate annual Baha & Sohrai rituals in the high canopy, considering the hill a sacred ancestral shield.",
-            archivalTrivia: "The summit stands at 4,478 feet, making it the highest natural geographical elevation in Jharkhand state.",
-            audioGuideSummary: "Ascend Parasnath Hill, the 4,478 ft sacred mountain peak where 20 Jain Tirthankaras attained nirvana."
-        }
-    },
-    {
-        id: "sohrai-tribal-village",
-        name: "Hazaribagh Sohrai Arts Village",
-        district: "Hazaribagh",
-        category: "Heritage",
-        rating: 4.8,
-        reviewsCount: 230,
-        distanceKm: 95,
-        tagline: "Living museum of UNESCO-acknowledged indigenous Sohrai-Khovar mud mural art.",
-        description: "Enter rural villages around Hazaribagh where Santhal, Munda, and Kurmi tribal women paint mud cottage walls with natural earth pigments depicting flora, fauna, and fertility symbols during harvest season.",
-        heroImage: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=1000&q=80"
-        ],
-        bestTime: "October to February",
-        entryFee: "Free (Donations to artisans welcomed)",
-        timings: "9:00 AM - 5:00 PM",
-        crowdStatus: "Low",
-        crowdLevel: "green",
-        coordinates: { lat: 23.9968, lng: 85.3644 },
-        highlights: ["Live Wall Painting Workshops", "Sohrai GI Tag Exhibition", "Tribal Cuisine Experience", "Direct Artisan Purchase"],
-        facilities: ["Homestays", "Artisans Guide", "Handicrafts Shop"],
-        history: {
-            builtYear: "Meso-Neolithic Cave Art Era (~10,000 BC) to Present",
-            builtBy: "Women Artisans of Santhal, Munda & Kurmi Tribes",
-            era: "Prehistoric Rock Art Heritage & GI Tagged Tradition",
-            architecturalStyle: "Clay Mud Wall Mural Art with Natural Earth Pigments",
-            historyStory: "Sohrai and Khovar wall art directly traces back to the 10,000 BC Meso-Neolithic rock art paintings found in Isko and Naukeval caves of Hazaribagh. Women pass down these comb-and-fingertip mural painting styles through mother-daughter lineages.",
-            originLegend: "Khovar art (derived from 'Kho' meaning cave and 'Var' meaning bridegroom) is painted inside wedding chambers to invoke fertility and harmony with forest spirits.",
-            archivalTrivia: "Sohrai-Khovar art received the official Geographical Indication (GI Tag) in 2020.",
-            audioGuideSummary: "Step into Hazaribagh's mud mural villages, preserving 10,000-year-old rock art traditions on cottage walls."
+            builtYear: "Prehistoric Geological Epoch",
+            builtBy: "Burha River System",
+            era: "Chotanagpur Fault Escarpment",
+            architecturalStyle: "Multi-Tiered Deep Jungle Escarpment Waterfall",
+            historyStory: "Lodh Falls is formed where the Burha River drops off the high Netarhat plateau. The thunderous roar of the waterfall can be heard up to 10 kilometers away in peak monsoon.",
+            originLegend: "Local Korwa and Asur tribes consider the waterfall pool a sacred sanctuary guarded by forest spirits.",
+            archivalTrivia: "Standing at 469 feet, it is officially recorded as the highest natural vertical water drop in Jharkhand state.",
+            audioGuideSummary: "You are visiting Lodh Falls, Jharkhand's tallest waterfall dropping 469 feet over ancient forest cliffs."
         }
     },
     {
@@ -261,9 +76,9 @@ export const DESTINATIONS = [
         distanceKm: 34,
         tagline: "144 ft roaring cascade of Kanchi river flowing into ten stream channels.",
         description: "Derived from 'Da-song' in Mundari language meaning water pouring out, Dassam Falls tumbles down 44 metres through steep rocky cliffs into a wild river gorge, surrounded by thick teak trees.",
-        heroImage: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
         images: [
-            "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=80"
+            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
         ],
         bestTime: "October to March",
         entryFee: "₹15",
@@ -279,9 +94,504 @@ export const DESTINATIONS = [
             era: "Chotanagpur Fluvial Epoch",
             architecturalStyle: "Multi-Tiered Escarpment Gorge",
             historyStory: "Dassam Falls cascades down 144 feet over hard granite bedrock where the Kanchi river fractures into ten distinct streams before converging into a deep canyon pool.",
-            originLegend: "The name 'Da-song' comes from Mundari words: 'Da' (water) and 'Song' (pouring in ten streams). Munda villagers believe the thunderous sound announces the monsoon arrival.",
-            archivalTrivia: "The mist created by Dassam's drop creates perpetual micro-rainbows visible every morning between 8 AM and 10 AM.",
+            originLegend: "The name 'Da-song' comes from Mundari words: 'Da' (water) and 'Song' (pouring in ten streams).",
+            archivalTrivia: "The mist created by Dassam's drop creates perpetual micro-rainbows visible every morning.",
             audioGuideSummary: "Experience Dassam Falls, where the Kanchi river splits into 10 streams falling 144 feet into a gorge."
+        }
+    },
+    {
+        id: "jonha-falls",
+        name: "Jonha Falls (Gautamdhara)",
+        district: "Ranchi",
+        category: "Waterfalls",
+        rating: 4.6,
+        reviewsCount: 285,
+        distanceKm: 40,
+        tagline: "Sacred waterfall steps where Lord Buddha is believed to have bathed.",
+        description: "Surrounded by dense forest cover, Jonha Falls cascades down 43 metres over natural rock steps. Nearby stands a serene Buddhist ashram and temple dedicated to Gautam Buddha.",
+        heroImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March",
+        entryFee: "₹10",
+        timings: "6:00 AM - 5:00 PM",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 23.3444, lng: 85.6108 },
+        highlights: ["Buddha Temple Shrine", "Rock Stairway Trail", "Valley Panorama"],
+        facilities: ["Parking", "Rest Huts", "Snack Stalls"],
+        history: {
+            builtYear: "Ancient Epoch",
+            builtBy: "Raru River",
+            era: "Buddhist Pilgrimage Heritage",
+            architecturalStyle: "Cascading Rock Steps",
+            historyStory: "Named Gautamdhara after Lord Buddha who local traditions believe visited and rested near these falls.",
+            originLegend: "Devotees bathe in the sacred pools on Tuesday and Saturday fair days.",
+            archivalTrivia: "Over 700 rock steps lead down to the base pool.",
+            audioGuideSummary: "Descend the stone stairways of Jonha Falls where Lord Buddha rested in forest quietude."
+        }
+    },
+    {
+        id: "patratu-valley",
+        name: "Patratu Valley & Dam Lake",
+        district: "Ramgarh",
+        category: "Adventure",
+        rating: 4.7,
+        reviewsCount: 450,
+        distanceKm: 35,
+        tagline: "Winding serpentine hairpin curves overlooking a sprawling emerald reservoir.",
+        description: "Famous for its mesmerizing winding mountain roads reminiscent of European alpine passes, Patratu Valley leads down to a massive dam reservoir offering speedboat rides, floating restaurants, and island eco-parks.",
+        heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "September to March",
+        entryFee: "₹30 for Dam Park",
+        timings: "8:00 AM - 6:30 PM",
+        crowdStatus: "Medium",
+        crowdLevel: "yellow",
+        coordinates: { lat: 23.6333, lng: 85.2833 },
+        highlights: ["Serpentine Valley Drive", "Speedboat & Jet Ski", "Island Resort Park", "Sunset Viewpoints"],
+        facilities: ["Boating Club", "Food Court", "Water Sports", "Parking"],
+        history: {
+            builtYear: "1962 AD (Dam & Valley Road Engineering)",
+            builtBy: "Russian Engineers & Government of India",
+            era: "Post-Independence Industrial & Civil Infrastructure",
+            architecturalStyle: "Modern Civil Engineering Serpentine Pass",
+            historyStory: "Constructed in 1962 with Soviet collaboration to supply cooling water to the Patratu Thermal Power Station, the dam transformed the Nalkari river basin into a massive lake.",
+            originLegend: "Local elders recount how the valley was once an impassable jungle inhabited by leopards before engineers blasted 22 hairpin bends into the cliffside.",
+            archivalTrivia: "The valley road cut through Chotanagpur granite features 360-degree panoramic loops.",
+            audioGuideSummary: "Built in 1962 with Soviet engineering expertise, Patratu Dam transformed the Nalkari valley into a scenic water reservoir."
+        }
+    },
+    {
+        id: "betla-national-park",
+        name: "Betla National Park & Sanctuary",
+        district: "Latehar",
+        category: "Wildlife",
+        rating: 4.9,
+        reviewsCount: 512,
+        distanceKm: 165,
+        tagline: "One of India's earliest tiger reserves with ancient Chero Dynasty forts inside.",
+        description: "Spanning over 1,000 sq km of lush sal and bamboo forests, Betla was among the first sanctuaries in India to come under Project Tiger in 1973. It is home to wild elephants, tigers, leopards, Indian bison (gaur), and over 170 bird species.",
+        heroImage: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "November to May",
+        entryFee: "₹100 (Safari extra)",
+        timings: "6:00 AM - 4:30 PM",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 23.8864, lng: 84.1901 },
+        highlights: ["Elephant Safari", "Chero Fort Ruins", "Wild Bison Sighting", "Forest Watchtowers"],
+        facilities: ["Govt Eco Lodges", "Safari Jeep Rental", "Certified Tribal Guides", "Canteen"],
+        history: {
+            builtYear: "1613 AD (Forts) / 1973 (Tiger Reserve)",
+            builtBy: "Raja Medini Ray (Chero Kingdom)",
+            era: "17th Century Chero Dynasty & Modern Eco-Conservation",
+            architecturalStyle: "Indo-Islamic & Tribal Stone Fortress Architecture",
+            historyStory: "Betla houses two massive 16th-century twin forts constructed deep inside the jungle by the Chero rulers, Medini Ray and Pratap Ray.",
+            originLegend: "Legend tells of King Medini Ray, known as the 'Just Sovereign of Palamu', who built Nagpuri gate with stone carvings.",
+            archivalTrivia: "The acronym B.E.T.L.A stands for Bison, Elephant, Tiger, Leopard, and Axis (Spotted Deer).",
+            audioGuideSummary: "Explore Betla, where 400-year-old stone fort ruins of the Chero Dynasty emerge from dense Sal tiger reserves."
+        }
+    },
+    {
+        id: "netarhat-queen-of-chotanagpur",
+        name: "Netarhat — Queen of Chotanagpur",
+        district: "Latehar",
+        category: "Eco Tourism",
+        rating: 4.9,
+        reviewsCount: 680,
+        distanceKm: 156,
+        tagline: "Serene hill station perched at 3,700 ft surrounded by pine and sal valleys.",
+        description: "Netarhat is Jharkhand's premier hill destination, famed for its breathtaking Magnolia Sunset Point, Pine Forests, and crisp mountain breeze. Perched high on the Chotanagpur plateau, it offers an unspoiled retreat into pristine forests.",
+        heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "Year-Round",
+        entryFee: "Free",
+        timings: "Open 24 hrs",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 23.4833, lng: 84.2667 },
+        highlights: ["Magnolia Sunset Point", "Netarhat Residential School", "Pine Forest Trails", "Lower Ghaghri Falls"],
+        facilities: ["JTDC Prabhat Vihar Hotel", "Tea Stalls", "Trekking Trails", "Viewpoints"],
+        history: {
+            builtYear: "Early 20th Century (1900s) / Ancient Asur Tribal Settlement",
+            builtBy: "British Governor Sir Charles Elliot / Indigenous Asur Tribe",
+            era: "Colonial Hill Retreat & Ancient Metallurgy Tradition",
+            architecturalStyle: "British Bungalow & Eco-Woodland Architecture",
+            historyStory: "Originally an indigenous homeland of the Asur tribal artisans known for ancient iron smelting, Netarhat was developed into a summer retreat by British officials in the early 1900s.",
+            originLegend: "The famous 'Magnolia Point' is named after an English lady named Magnolia who fell in love with a local tribal musician.",
+            archivalTrivia: "Netarhat Residential School, established in 1954, is famous as an incubator of top scholars.",
+            audioGuideSummary: "Perched at 3,700 feet, Netarhat was developed in the early 1900s amidst ancient Asur tribal iron smelting heritage."
+        }
+    },
+    {
+        id: "baidyanath-dham",
+        name: "Baidyanath Dham Temple",
+        district: "Deoghar",
+        category: "Spiritual",
+        rating: 4.9,
+        reviewsCount: 1240,
+        distanceKm: 250,
+        tagline: "Sacred 12 Jyotirlinga shrine revered by millions of pilgrims worldwide.",
+        description: "Baba Baidyanath Dham in Deoghar is one of the twelve revered Jyotirlingas of Lord Shiva in India. Famous for the annual Shravani Mela, where millions of devotees carry holy Ganga water from Sultanganj barefoot to offer to the deity.",
+        heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March (or July-Aug for Mela)",
+        entryFee: "Free Entry",
+        timings: "4:00 AM - 9:00 PM",
+        crowdStatus: "High",
+        crowdLevel: "red",
+        coordinates: { lat: 24.4925, lng: 86.6997 },
+        highlights: ["12th Jyotirlinga", "Panchshool Gold Crest", "Historic Complex", "Cultural Crafts Market"],
+        facilities: ["Sugam Darshan Pass", "Shoe Counters", "Prasad Stalls", "Govt Information Desk"],
+        history: {
+            builtYear: "1596 AD (Present Structure) / Ancient Vedic Antiquity",
+            builtBy: "Raja Puran Mal of Gidhaur / Vishwakarma Mythological Lineage",
+            era: "Vedic Era & 16th Century Nagara Temple Renaissance",
+            architecturalStyle: "Classical North Indian Nagara Style with Gold Panchshool",
+            historyStory: "The current main temple of Baidyanath was constructed in 1596 AD by Raja Puran Mal of the Gidhaur dynasty. The complex consists of 22 temples dedicated to various deities.",
+            originLegend: "According to Shiva Purana, Demon King Ravana performed intense penance in the Himalayas, severing nine of his heads to Shiva.",
+            archivalTrivia: "Unlike all other 11 Jyotirlingas which carry a Trishul on top, Baidyanath Temple features a unique five-pronged golden 'Panchshool'.",
+            audioGuideSummary: "Welcome to Baba Baidyanath Dham, a 16th-century Nagara temple housing one of India's 12 divine Jyotirlingas."
+        }
+    },
+    {
+        id: "rajrappa-temple",
+        name: "Rajrappa Chhinnamasta Temple",
+        district: "Ramgarh",
+        category: "Spiritual",
+        rating: 4.8,
+        reviewsCount: 740,
+        distanceKm: 65,
+        tagline: "Ancient Shakti Peeth temple at the sacred confluence of Damodar & Bhairavi rivers.",
+        description: "Maa Chhinnamastika Temple at Rajrappa is one of the ten Mahavidyas and a major Tantric Shakti Peeth in India. Located on a hillock where the Damodar and Bhairavi rivers meet, creating a mesmerizing natural river gorge backdrop.",
+        heroImage: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March",
+        entryFee: "Free",
+        timings: "5:00 AM - 8:00 PM",
+        crowdStatus: "High",
+        crowdLevel: "red",
+        coordinates: { lat: 23.6300, lng: 85.7100 },
+        highlights: ["Chhinnamasta Shakti Peeth", "Damodar-Bhairavi Sangam", "River Boating", "Ancient Tantric Heritage"],
+        facilities: ["Shoe Counter", "River Ghat Stairs", "Pooja Stalls", "Parking"],
+        history: {
+            builtYear: "Ancient Vedic Epoch / Restored 16th Century",
+            builtBy: "Palamau / Ramgarh Rulers",
+            era: "Mahavidya Tantric Heritage",
+            architecturalStyle: "Classical Stone Temple over River Gorge",
+            historyStory: "Rajrappa shrine is dedicated to Goddess Chhinnamasta, depicted holding her own severed head. It stands at the geographical point where Bhairavi river plunges into Damodar.",
+            originLegend: "According to Hindu Puranas, the goddess decapitated herself to satisfy the hunger of her companions after slaying demons.",
+            archivalTrivia: "Tantric practitioners and devotees gather here during Navratri and Makar Sankranti for holy baths at the river sangam.",
+            audioGuideSummary: "You are visiting Rajrappa, an ancient Tantric Shakti Peeth shrine situated at the roaring river confluence."
+        }
+    },
+    {
+        id: "maithon-dam",
+        name: "Maithon Dam & Lake",
+        district: "Dhanbad",
+        category: "Adventure",
+        rating: 4.7,
+        reviewsCount: 410,
+        distanceKm: 215,
+        tagline: "Massive blue water reservoir on Barakar river with speedboating & Deer Park.",
+        description: "Designed specifically for flood control and hydroelectric power generation under Damodar Valley Corporation (DVC), Maithon Dam ('Mother's Abode') spans a massive blue water lake with surrounding green hills, island eco-parks, and deer sanctuaries.",
+        heroImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March",
+        entryFee: "Free (Boating ₹100-300)",
+        timings: "6:00 AM - 6:30 PM",
+        crowdStatus: "Medium",
+        crowdLevel: "yellow",
+        coordinates: { lat: 23.7744, lng: 86.8083 },
+        highlights: ["Speedboating to Sabitri Island", "Underground Powerhouse", "Deer Park Sanctuary", "Sunset Dam Walk"],
+        facilities: ["DVC Guest House", "Speedboat Club", "Restaurants", "Parking"],
+        history: {
+            builtYear: "1957 AD",
+            builtBy: "Damodar Valley Corporation (DVC)",
+            era: "Post-Independence Heavy Hydro Engineering",
+            architecturalStyle: "Earthen & Concrete Dam Hydroelectric Complex",
+            historyStory: "Inaugurated by Prime Minister Jawaharlal Nehru in 1957, Maithon Dam features India's first underground hydroelectric power station.",
+            originLegend: "Named after Kalyaneshwari Maa ('Mai-ka-than' or Mother's Sanctuary) temple located nearby.",
+            archivalTrivia: "The reservoir spreads over 65 square kilometers, serving as a sanctuary for migratory birds in winter.",
+            audioGuideSummary: "Explore Maithon Dam, featuring India's first underground power station and a sprawling blue lake."
+        }
+    },
+    {
+        id: "ranchi-jagannath-temple",
+        name: "Ranchi Jagannath Temple",
+        district: "Ranchi",
+        category: "Spiritual",
+        rating: 4.8,
+        reviewsCount: 520,
+        distanceKm: 12,
+        tagline: "1691 AD hill temple built by Nagvanshi King resembling Puri Jagannath Temple.",
+        description: "Built in 1691 AD by King Anek Nath Shahdeo, Ranchi Jagannath Temple sits atop a scenic hillock in Dhurwa. Architectural replica of the world-famous Puri Jagannath Temple, it hosts the annual Rath Yatra festival drawing thousands of pilgrims.",
+        heroImage: "https://images.unsplash.com/photo-1621831971412-d227f425b035?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1621831971412-d227f425b035?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "Year-Round (Rath Yatra in July)",
+        entryFee: "Free",
+        timings: "5:00 AM - 8:00 PM",
+        crowdStatus: "Medium",
+        crowdLevel: "yellow",
+        coordinates: { lat: 23.3150, lng: 85.2800 },
+        highlights: ["1691 AD Hilltop Architecture", "Annual Rath Yatra Chariot Festival", "Panoramic City Sunset View", "Sacred Shrine Complex"],
+        facilities: ["Shoe Counter", "Hill Stairway", "Prasad Counter", "Parking"],
+        history: {
+            builtYear: "1691 AD",
+            builtBy: "King Anek Nath Shahdeo (Nagvanshi Dynasty)",
+            era: "17th Century Nagvanshi Royal Dynasty",
+            architecturalStyle: "Kalinga Style Hilltop Stone Architecture",
+            historyStory: "Constructed on December 25, 1691 by King Anek Nath Shahdeo to allow local devotees who could not trek to Puri to worship Lord Jagannath.",
+            originLegend: "Royal artisans were sent to Puri in 1685 to study the exact sacred dimensions of the Jagannath shrine.",
+            archivalTrivia: "The temple collapsed partially in 1990 due to natural wear and was meticulously restored by the State Archaeology Department.",
+            audioGuideSummary: "Stand before the 1691 AD hilltop Jagannath Temple built by Nagvanshi rulers overlooking Ranchi."
+        }
+    },
+    {
+        id: "mccluskieganj-heritage",
+        name: "McCluskieganj Colonial Village",
+        district: "Ranchi",
+        category: "Heritage",
+        rating: 4.7,
+        reviewsCount: 185,
+        distanceKm: 60,
+        tagline: "World's only Anglo-Indian mini-England colonial village nestled in pine hills.",
+        description: "Founded in 1933 by Timothy McCluskie, McCluskieganj was established as a dream homeland settlement for the Anglo-Indian community. Nestled amidst sal forests and pine rivulets, it features vintage British brick bungalows and quiet country lanes.",
+        heroImage: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March",
+        entryFee: "Free",
+        timings: "Open 24 hrs",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 23.6667, lng: 84.9500 },
+        highlights: ["Colonial British Cottages", "Dugadugi River Bank", "Don Bosco School Heritage", "Anglo-Indian Homestays"],
+        facilities: ["Heritage Homestays", "Local Guides", "Tea Gardens Walk"],
+        history: {
+            builtYear: "1933 AD",
+            builtBy: "Timothy McCluskie (Colonisation Association of India)",
+            era: "Colonial Anglo-Indian Settlement Era",
+            architecturalStyle: "British Country Cottage & Red Brick Architecture",
+            historyStory: "Over 300 Anglo-Indian families from across India settled here in the 1930s, creating an English-style countryside complete with bakeries, flower gardens, and clubhouses.",
+            originLegend: "Known locally as 'Chota England' (Mini England) in British era journals.",
+            archivalTrivia: "Famous Indian film 'A Death in the Gunj' directed by Konkona Sen Sharma was shot entirely on location here.",
+            audioGuideSummary: "Step back in time to 1933 in McCluskieganj, the world's unique Anglo-Indian countryside village."
+        }
+    },
+    {
+        id: "massanjore-dam",
+        name: "Massanjore Dam (Canada Dam)",
+        district: "Dumka",
+        category: "Eco Tourism",
+        rating: 4.8,
+        reviewsCount: 320,
+        distanceKm: 280,
+        tagline: "Picturesque turquoise lake on Mayurakshi River built with Canadian aid in 1955.",
+        description: "Situated in Dumka district near the West Bengal border, Massanjore Dam (popularly called Canada Dam) impounds the Mayurakshi River amidst surrounding green rolling hills, featuring turquoise blue waters and flower gardens.",
+        heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March",
+        entryFee: "Free",
+        timings: "6:00 AM - 6:00 PM",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 24.1147, lng: 87.3508 },
+        highlights: ["Canada Dam Spillway Walk", "Mayurakshi River Garden", "Turquoise Lake Boating", "Santhal Tribal Crafts"],
+        facilities: ["Youth Hostel", "Govt Inspection Bungalow", "Boating Dock", "Parking"],
+        history: {
+            builtYear: "1955 AD",
+            builtBy: "Lester B. Pearson (Foreign Minister of Canada) & Govt of India",
+            era: "Post-Independence International Hydro Cooperation",
+            architecturalStyle: "Concrete Gravity Dam & Eco-Garden Complex",
+            historyStory: "Inaugurated in 1955 by Canadian Foreign Minister Lester B. Pearson under the Colombo Plan, earning it the beloved moniker 'Canada Dam'.",
+            originLegend: "Built across Mayurakshi ('Peacock Eyes') River named for its crystal sparkling blue ripples.",
+            archivalTrivia: "The dam reservoir covers 16,500 acres surrounded by Santhal tribal villages.",
+            audioGuideSummary: "Discover Massanjore Dam, built with Canadian aid in 1955 over the sparkling Mayurakshi River."
+        }
+    },
+    {
+        id: "parasnath-shikharji",
+        name: "Parasnath Hill (Shikharji)",
+        district: "Giridih",
+        category: "Spiritual",
+        rating: 4.9,
+        reviewsCount: 890,
+        distanceKm: 160,
+        tagline: "Highest peak of Jharkhand (4,478 ft) and sacred Jain pilgrimage destination.",
+        description: "Parasnath Hill is the tallest mountain peak in Jharkhand state. Revered as Shikharji, 20 out of 24 Jain Tirthankaras attained Moksha (liberation) here. The 27-km mountain trek passes through cloud forests, stone stupas, and ancient marble temples.",
+        heroImage: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March",
+        entryFee: "Free",
+        timings: "Open 24 hrs for pilgrims",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 23.9625, lng: 86.1558 },
+        highlights: ["4,478 ft Summit Trek", "Tonk Temple Shrines", "Cloud Valley Views", "Santhal Tribal Sacred Groves"],
+        facilities: ["Palanquin (Doli) Service", "Rest Huts", "Drinking Water Stations", "Dharamshalas"],
+        history: {
+            builtYear: "Ancient Vedic / Jain Canon (8th Century BC)",
+            builtBy: "Jain Monastic Guilds & Santhal Ancestral Guardians",
+            era: "Antiquity & Classical Jain Architectural Era",
+            architecturalStyle: "White Marble Tonk Shrines & Tribal Sacred Grove Sanctuaries",
+            historyStory: "Named after Lord Parshvanatha, the 23rd Tirthankara who attained nirvana here in the 8th century BC. Out of 24 Jain Tirthankaras, 20 attained ultimate spiritual liberation on these peaks.",
+            originLegend: "To the indigenous Santhal people, the mountain is Marang Buru ('The Great Mountain God').",
+            archivalTrivia: "The summit stands at 4,478 feet, making it the highest natural geographical elevation in Jharkhand state.",
+            audioGuideSummary: "Ascend Parasnath Hill, the 4,478 ft sacred mountain peak where 20 Jain Tirthankaras attained nirvana."
+        }
+    },
+    {
+        id: "sohrai-tribal-village",
+        name: "Hazaribagh Sohrai Arts Village",
+        district: "Hazaribagh",
+        category: "Heritage",
+        rating: 4.8,
+        reviewsCount: 230,
+        distanceKm: 95,
+        tagline: "Living museum of UNESCO-acknowledged indigenous Sohrai-Khovar mud mural art.",
+        description: "Enter rural villages around Hazaribagh where Santhal, Munda, and Kurmi tribal women paint mud cottage walls with natural earth pigments depicting flora, fauna, and fertility symbols during harvest season.",
+        heroImage: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to February",
+        entryFee: "Free (Donations to artisans welcomed)",
+        timings: "9:00 AM - 5:00 PM",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 23.9968, lng: 85.3644 },
+        highlights: ["Live Wall Painting Workshops", "Sohrai GI Tag Exhibition", "Tribal Cuisine Experience", "Direct Artisan Purchase"],
+        facilities: ["Homestays", "Artisans Guide", "Handicrafts Shop"],
+        history: {
+            builtYear: "Meso-Neolithic Cave Art Era (~10,000 BC) to Present",
+            builtBy: "Women Artisans of Santhal, Munda & Kurmi Tribes",
+            era: "Prehistoric Rock Art Heritage & GI Tagged Tradition",
+            architecturalStyle: "Clay Mud Wall Mural Art with Natural Earth Pigments",
+            historyStory: "Sohrai and Khovar wall art directly traces back to the 10,000 BC Meso-Neolithic rock art paintings found in Isko and Naukeval caves of Hazaribagh.",
+            originLegend: "Khovar art (derived from 'Kho' meaning cave and 'Var' meaning bridegroom) is painted inside wedding chambers.",
+            archivalTrivia: "Sohrai-Khovar art received the official Geographical Indication (GI Tag) in 2020.",
+            audioGuideSummary: "Step into Hazaribagh's mud mural villages, preserving 10,000-year-old rock art traditions on cottage walls."
+        }
+    },
+    {
+        id: "dalma-wildlife-sanctuary",
+        name: "Dalma Wildlife Sanctuary",
+        district: "East Singhbhum",
+        category: "Wildlife",
+        rating: 4.7,
+        reviewsCount: 390,
+        distanceKm: 18,
+        tagline: "Serene elephant sanctuary hilltop overlooking the steel city of Jamshedpur.",
+        description: "Perched on the Dalma mountain range at 3,000 ft, Dalma Wildlife Sanctuary is renowned for its wild Asian elephant population, Hanuman langurs, bark deer, and Hanuman temple peak overlooking Subarnarekha River.",
+        heroImage: "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to June",
+        entryFee: "₹50 per person",
+        timings: "6:00 AM - 5:00 PM",
+        crowdStatus: "Medium",
+        crowdLevel: "yellow",
+        coordinates: { lat: 22.9031, lng: 86.2231 },
+        highlights: ["Wild Elephant Corridor", "Shiva Temple Peak Trek", "Steel City Viewpoint", "Deer Enclosure"],
+        facilities: ["Forest Rest House", "Jeep Safari", "Canteen"],
+        history: {
+            builtYear: "1975 AD",
+            builtBy: "Government of Bihar / Forest Department",
+            era: "Modern Wildlife Sanctuary Epoch",
+            architecturalStyle: "Montane Subtropical Deciduous Sal Forest",
+            historyStory: "Inaugurated by Sanjay Gandhi in 1975, Dalma forms a crucial wildlife migration corridor for wild elephants moving between Jharkhand, West Bengal, and Odisha.",
+            originLegend: "Local tribal legends hold that Goddess Dalma Ma protects the mountain range from forest fires.",
+            archivalTrivia: "The summit at 3,000 ft houses a historic Shiva temple that attracts thousands during Shivratri.",
+            audioGuideSummary: "Ascend Dalma Hills, a 3,000 ft sanctuary where wild elephant herds roam above Jamshedpur."
+        }
+    },
+    {
+        id: "saranda-forest",
+        name: "Saranda Forest Canopy",
+        district: "West Singhbhum",
+        category: "Wildlife",
+        rating: 4.8,
+        reviewsCount: 210,
+        distanceKm: 180,
+        tagline: "Asia's largest ancient Sal forest canopy, known as the 'Land of 700 Hills'.",
+        description: "Spanning over 800 sq km of dense virgin Sal timber forest across Chotanagpur, Saranda ('Seven Hundred Hills') is home to wild elephants, endangered flora, and pristine forest streams.",
+        heroImage: "https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "November to April",
+        entryFee: "Permit required at Forest Office",
+        timings: "6:00 AM - 4:00 PM",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 22.2500, lng: 85.2833 },
+        highlights: ["Thalkobad Forest Rest House", "700 Hills Viewpoint", "Wild Elephant Herd Spotting"],
+        facilities: ["Forest Guest House", "Local Tribal Guides"],
+        history: {
+            builtYear: "Ancient Geological Epoch",
+            builtBy: "Subarnarekha / Baitarani Watershed",
+            era: "Prehistoric Chotanagpur Sal Forest Heritage",
+            architecturalStyle: "Dense Virgin Sal Forest Canopy",
+            historyStory: "Saranda served as the private hunting preserve of the Singdeo royal family of Porahat before becoming a reserved forest under British rule in 1890.",
+            originLegend: "Name Saranda translates to 'Seven Hundred Hills' in local Ho tribal dialect.",
+            archivalTrivia: "The forest canopy is so dense in parts that sunlight barely touches the ground.",
+            audioGuideSummary: "Journey through Saranda, Asia's largest Sal timber forest canopy stretching across 700 rolling hills."
+        }
+    },
+    {
+        id: "hirni-falls",
+        name: "Hirni Waterfalls",
+        district: "Khunti",
+        category: "Waterfalls",
+        rating: 4.6,
+        reviewsCount: 195,
+        distanceKm: 70,
+        tagline: "37-metre roaring jungle waterfall surrounded by dense sal trees and rock pools.",
+        description: "Situated in the middle of dense sal forests on Ramgarha River, Hirni Falls cascades down 37 metres over jagged metamorphic rocks into a clear pool, featuring a watchtower with panoramic forest views.",
+        heroImage: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80"
+        ],
+        bestTime: "October to March",
+        entryFee: "₹15",
+        timings: "7:00 AM - 5:00 PM",
+        crowdStatus: "Low",
+        crowdLevel: "green",
+        coordinates: { lat: 22.9667, lng: 85.2333 },
+        highlights: ["Forest Watchtower", "Ramgarha River Trail", "Wild Butterfly Spotting"],
+        facilities: ["Parking", "Guard Railings", "Forest Rest Huts"],
+        history: {
+            builtYear: "Geological Epoch",
+            builtBy: "Ramgarha River",
+            era: "Chotanagpur Plateau Fluvial Epoch",
+            architecturalStyle: "Sal Forest Escarpment Waterfall",
+            historyStory: "Hirni Falls drops over ancient metamorphic rock beds inside the dense forest belts of Khunti district.",
+            originLegend: "Local Munda lore connects the name 'Hirni' (Golden Doe) to wild deer herds drinking at the pool.",
+            archivalTrivia: "A steel watchtower perched above the crest offers panoramic views of the forest canopy.",
+            audioGuideSummary: "Experience Hirni Falls, a 37-metre waterfall hidden inside the dense Sal forests of Khunti."
         }
     }
 ];
@@ -297,5 +607,5 @@ export const CATEGORIES = [
 ];
 
 export const DISTRICTS = [
-    "All Districts", "Ranchi", "Latehar", "Deoghar", "Ramgarh", "Giridih", "Hazaribagh", "East Singhbhum (Jamshedpur)", "Khunti", "Gumla"
+    "All Districts", "Ranchi", "Latehar", "Deoghar", "Ramgarh", "Giridih", "Hazaribagh", "East Singhbhum (Jamshedpur)", "West Singhbhum", "Khunti", "Dhanbad", "Dumka"
 ];

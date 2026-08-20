@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DESTINATIONS } from '../data/destinations';
+import { generateLiveItinerary } from '../api/itineraryService';
 import {
     Sparkles,
     Calendar,
@@ -48,7 +49,7 @@ export default function ItineraryPlannerPage({ onOpenBooking }) {
         { id: 'Luxury', range: '₹7,000+/day', desc: 'Heritage resorts, forest safaris & personal guide' },
     ];
 
-    // Generated Mock Itinerary Days Structure
+    // Generated Itinerary Days Structure
     const [itineraryDays, setItineraryDays] = useState([
         {
             day: 1,
@@ -79,6 +80,8 @@ export default function ItineraryPlannerPage({ onOpenBooking }) {
         }
     ]);
 
+    const [totalBudgetINR, setTotalBudgetINR] = useState(10500);
+
     const toggleInterest = (interestId) => {
         if (selectedInterests.includes(interestId)) {
             setSelectedInterests(selectedInterests.filter(i => i !== interestId));
@@ -87,13 +90,75 @@ export default function ItineraryPlannerPage({ onOpenBooking }) {
         }
     };
 
-    const handleGenerate = (e) => {
+    const handleGenerate = async (e) => {
         e.preventDefault();
         setIsGenerating(true);
-        setTimeout(() => {
+        try {
+            // First try calling the Next.js / server route if available
+            let data = null;
+            try {
+                const res = await fetch('/api/generate-itinerary', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        experiences: selectedInterests,
+                        days: Number(days),
+                        hub: startingPoint,
+                        budgetTier: budget.toLowerCase()
+                    })
+                });
+                if (res.ok) {
+                    data = await res.json();
+                }
+            } catch (apiErr) {
+                console.log('Server route not reachable, executing direct live service...');
+            }
+
+            // If server route not found (Vite client dev mode), execute live service directly
+            if (!data) {
+                data = await generateLiveItinerary({
+                    experiences: selectedInterests,
+                    days: Number(days),
+                    hub: startingPoint,
+                    budgetTier: budget.toLowerCase()
+                });
+            }
+
+            if (data && data.days && data.days.length > 0) {
+                const formattedDays = data.days.map((d) => ({
+                    day: d.day,
+                    title: d.title,
+                    estimatedBudgetINR: d.estimatedBudgetINR,
+                    travelNotes: d.travelNotes,
+                    stops: d.stops.map((stop, sIdx) => {
+                        const matchedDest = DESTINATIONS.find(dest => dest.name.toLowerCase().includes(stop.name.toLowerCase())) || DESTINATIONS[sIdx % DESTINATIONS.length];
+                        return {
+                            id: `stop-${d.day}-${sIdx}`,
+                            time: sIdx === 0 ? '08:30 AM' : sIdx === 1 ? '01:00 PM' : '04:30 PM',
+                            place: {
+                                name: stop.name,
+                                category: stop.kind || 'Tourism Spot',
+                                district: startingPoint,
+                                heroImage: matchedDest?.heroImage || DESTINATIONS[0].heroImage,
+                                rating: stop.rating,
+                                ratingSource: stop.ratingSource
+                            },
+                            note: stop.description || `${stop.estimatedTimeHrs || 2} hrs sightseeing time.`
+                        };
+                    })
+                }));
+                setItineraryDays(formattedDays);
+                if (data.totalEstimatedBudgetINR) {
+                    setTotalBudgetINR(data.totalEstimatedBudgetINR);
+                }
+                setActiveDayTab(1);
+            }
+        } catch (err) {
+            console.error('Error generating live itinerary:', err);
+        } finally {
             setIsGenerating(false);
             setStep(2);
-        }, 800);
+        }
     };
 
     // Reorder stop function
@@ -392,8 +457,18 @@ export default function ItineraryPlannerPage({ onOpenBooking }) {
 
                                                     <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                                                         <img src={stop.place.heroImage} alt="" className="w-full sm:w-24 h-24 object-cover rounded-xl shrink-0" />
-                                                        <div className="space-y-1.5 text-left">
-                                                            <h4 className="font-serif font-bold text-base text-ink">{stop.place.name}</h4>
+                                                        <div className="space-y-1.5 text-left flex-1">
+                                                            <div className="flex flex-wrap items-center justify-between gap-2">
+                                                                <h4 className="font-serif font-bold text-base text-ink">{stop.place.name}</h4>
+                                                                {stop.place.rating && (
+                                                                    <div className="flex items-center gap-1.5 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full text-[11px] font-bold text-amber-900">
+                                                                        <span>★ {stop.place.rating}</span>
+                                                                        <span className="text-[9px] text-amber-700 font-medium">
+                                                                            ({stop.place.ratingSource === 'google' ? 'Google Verified' : 'Community Rated'})
+                                                                        </span>
+                                                                    </div>
+                                                                )}
+                                                            </div>
                                                             <p className="text-xs text-ink-light leading-relaxed">{stop.note}</p>
                                                             <span className="inline-block text-[10px] bg-secondary/10 text-secondary font-bold px-2.5 py-0.5 rounded-full border border-secondary/20">
                                                                 {stop.place.district} • {stop.place.category}
@@ -424,12 +499,14 @@ export default function ItineraryPlannerPage({ onOpenBooking }) {
 
                                 <div className="space-y-3 text-xs border-y border-warmborder/80 py-4">
                                     <div className="flex justify-between text-ink-light">
-                                        <span>Total Circuit Distance:</span>
-                                        <strong className="text-ink font-bold">~320 km</strong>
+                                        <span>Total Estimated Budget:</span>
+                                        <strong className="text-primary font-bold text-sm">₹{totalBudgetINR.toLocaleString('en-IN')}</strong>
                                     </div>
                                     <div className="flex justify-between text-ink-light">
-                                        <span>Est. Fuel / Private Transport:</span>
-                                        <strong className="text-ink font-bold">₹2,200</strong>
+                                        <span>AI Itinerary Engine:</span>
+                                        <strong className="text-emerald-700 font-bold flex items-center gap-1">
+                                            <Sparkles className="w-3 h-3 text-accent" /> Groq llama-3.3 Live
+                                        </strong>
                                     </div>
                                     <div className="flex justify-between text-ink-light">
                                         <span>Eco Homestays Available:</span>
