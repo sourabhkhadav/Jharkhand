@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MapPin, Search, Calendar, ShoppingBag, ShieldCheck, User, Menu, X, Sparkles, Compass } from 'lucide-react';
 import logoLeaf from '../assets/logo-leaf.jpg';
 
-export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
+export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth, onOpenVoice }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const location = useLocation();
@@ -17,13 +17,13 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
     };
 
     const navLinks = [
-        { path: '/', label: 'Home' },
-        { path: '/explore', label: 'Explore & Near Me' },
+        { path: '/explore', label: 'Explore Directory' },
+        { path: '/arrival-guide', label: 'Station Guide' },
+        { path: '/know-your-craft', label: 'Tribal Craft AI' },
+        { path: '/feedback', label: 'Help & Support' },
+        { path: '/lost-found', label: 'Lost & Found' },
         { path: '/planner', label: 'AI Itinerary' },
-        { path: '/booking', label: 'Stay & Guides' },
         { path: '/marketplace', label: 'Artisan Market' },
-        { path: '/safety', label: 'Safety & Live' },
-        { path: '/festivals', label: 'Festivals' },
     ];
 
     return (
@@ -47,7 +47,7 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
                 </Link>
 
                 {/* Desktop Nav Links */}
-                <nav className="hidden lg:flex items-center gap-4 xl:gap-5 flex-shrink-0">
+                <nav className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
                     {navLinks.map((link) => {
                         const isActive = location.pathname === link.path;
                         return (
@@ -70,6 +70,15 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
 
                 {/* Actions & Buttons */}
                 <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+                    {/* Voice Assistant Mic Button */}
+                    <button
+                        onClick={onOpenVoice}
+                        className="flex items-center gap-1 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-warm-sm transition"
+                        title="Open Voice Assistant (Hindi/English)"
+                    >
+                        <span>Voice AI</span>
+                    </button>
+
                     {/* Cart Icon */}
                     <button
                         onClick={onOpenCart}
@@ -92,15 +101,6 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth }) {
                         <User className="w-3.5 h-3.5 flex-shrink-0" />
                         <span className="whitespace-nowrap">Sign In</span>
                     </button>
-
-                    {/* Plan Trip Primary CTA */}
-                    <Link
-                        to="/planner"
-                        className="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-warm-sm hover:shadow transition-all whitespace-nowrap flex-shrink-0"
-                    >
-                        <Sparkles className="w-3.5 h-3.5 text-accent-light flex-shrink-0" />
-                        <span className="whitespace-nowrap">Plan My Trip</span>
-                    </Link>
 
                     {/* Mobile Menu Button */}
                     <button

@@ -172,6 +172,86 @@ export default function PlaceDetailPage({ onOpenReview, onAddToItinerary }) {
                 </div>
             </div>
 
+            {/* 🏛️ HISTORICAL CHRONICLES & ORIGIN STORY (FEATURE 1: SITE HISTORY & DETAILS) */}
+            {destination.history && (
+                <div className="bg-gradient-to-br from-[#2D1B08] via-[#1F1205] to-[#36210A] text-cream rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-[#D4AF37]/50 space-y-6 relative overflow-hidden">
+                    {/* Background Vintage Watermark */}
+                    <div className="absolute top-0 right-0 p-8 text-cream/5 text-9xl font-serif select-none pointer-events-none">🏛️</div>
+
+                    {/* Header */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#D4AF37]/30 pb-4 relative z-10">
+                        <div className="space-y-1">
+                            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/15 border border-[#D4AF37]/30 px-3 py-1 rounded-full text-xs font-bold text-[#F3E5AB] uppercase tracking-widest font-sans">
+                                <span>🏛️ Site History & Archival Chronicles</span>
+                            </div>
+                            <h2 className="font-serif font-extrabold text-2xl sm:text-4xl text-[#F3E5AB]">
+                                Origin Legend & Heritage Story
+                            </h2>
+                        </div>
+
+                        {/* Audio Narrative Guide Button */}
+                        <button
+                            onClick={() => {
+                                if ('speechSynthesis' in window) {
+                                    window.speechSynthesis.cancel();
+                                    const text = destination.history.audioGuideSummary || destination.history.historyStory;
+                                    const utterance = new SpeechSynthesisUtterance(text);
+                                    utterance.rate = 0.95;
+                                    window.speechSynthesis.speak(utterance);
+                                } else {
+                                    alert("Audio playback: " + (destination.history.audioGuideSummary || destination.history.historyStory));
+                                }
+                            }}
+                            className="bg-[#D4AF37] hover:bg-[#C5A028] text-ink font-sans font-bold text-xs px-5 py-3 rounded-full shadow-lg flex items-center justify-center gap-2 transition hover:scale-105 shrink-0"
+                        >
+                            <span>🔊 Play Audio Guide (Narrative)</span>
+                        </button>
+                    </div>
+
+                    {/* Historical Metadata Pill Strip */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-sans relative z-10">
+                        <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 space-y-1">
+                            <p className="text-[10px] uppercase font-bold text-[#D4AF37]">Est. Era / Built Year</p>
+                            <p className="text-xs font-bold text-white">{destination.history.builtYear}</p>
+                        </div>
+                        <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 space-y-1">
+                            <p className="text-[10px] uppercase font-bold text-[#D4AF37]">Built By / Creator</p>
+                            <p className="text-xs font-bold text-white">{destination.history.builtBy}</p>
+                        </div>
+                        <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 space-y-1">
+                            <p className="text-[10px] uppercase font-bold text-[#D4AF37]">Historical Era</p>
+                            <p className="text-xs font-bold text-white">{destination.history.era}</p>
+                        </div>
+                        <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 space-y-1">
+                            <p className="text-[10px] uppercase font-bold text-[#D4AF37]">Architecture / Form</p>
+                            <p className="text-xs font-bold text-white truncate">{destination.history.architecturalStyle}</p>
+                        </div>
+                    </div>
+
+                    {/* Detailed Chronicles & Mythology Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10 font-sans text-xs">
+                        <div className="bg-black/30 p-5 rounded-2xl border border-[#D4AF37]/20 space-y-2">
+                            <h3 className="font-serif font-bold text-base text-[#F3E5AB]">Historical Evolution</h3>
+                            <p className="text-cream/90 leading-relaxed font-light">{destination.history.historyStory}</p>
+                        </div>
+                        <div className="bg-black/30 p-5 rounded-2xl border border-[#D4AF37]/20 space-y-2">
+                            <h3 className="font-serif font-bold text-base text-[#F3E5AB]">Mythological / Local Lore</h3>
+                            <p className="text-cream/90 leading-relaxed font-light">{destination.history.originLegend}</p>
+                        </div>
+                    </div>
+
+                    {/* Archival Trivia Banner */}
+                    {destination.history.archivalTrivia && (
+                        <div className="p-4 bg-[#D4AF37]/15 rounded-2xl border border-[#D4AF37]/40 flex items-start gap-3 font-sans text-xs text-[#F3E5AB] relative z-10">
+                            <span className="text-lg shrink-0">📜</span>
+                            <p className="leading-relaxed">
+                                <strong className="font-bold">Archival Trivia: </strong> {destination.history.archivalTrivia}
+                            </p>
+                        </div>
+                    )}
+                </div>
+            )}
+
             {/* DESCRIPTION & HIGHLIGHTS */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-6">

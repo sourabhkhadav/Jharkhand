@@ -172,7 +172,7 @@ const TRIBAL_EXPERIENCES = [
     }
 ];
 
-export default function LandingPage({ onOpenBooking }) {
+export default function LandingPage({ onOpenBooking, onOpenVoice }) {
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
     const [experienceIndex, setExperienceIndex] = useState(0);

@@ -44,11 +44,11 @@ export default function Footer() {
                         <h4 className="font-serif font-bold text-sm text-accent uppercase tracking-wider">Discover</h4>
                         <ul className="space-y-2 text-xs text-cream/80">
                             <li><Link to="/explore" className="hover:text-accent transition">Waterfalls & Springs</Link></li>
-                            <li><Link to="/explore?cat=Spiritual" className="hover:text-accent transition">Baidyanath Dham & Shrines</Link></li>
-                            <li><Link to="/explore?cat=Wildlife" className="hover:text-accent transition">Betla National Park Safari</Link></li>
-                            <li><Link to="/festivals" className="hover:text-accent transition">Sarhul & Karma Festivals</Link></li>
+                            <li><Link to="/arrival-guide" className="hover:text-accent transition">Real-Time Station Guide</Link></li>
+                            <li><Link to="/know-your-craft" className="hover:text-accent transition">Tribal Craft AI Scanner</Link></li>
+                            <li><Link to="/feedback" className="hover:text-accent transition">Help & Support Cell</Link></li>
+                            <li><Link to="/lost-found" className="hover:text-accent transition">Lost & Found Registry</Link></li>
                             <li><Link to="/marketplace" className="hover:text-accent transition">Sohrai Wall Art Marketplace</Link></li>
-                            <li><Link to="/planner" className="hover:text-accent transition">AI Trip Planner</Link></li>
                         </ul>
                     </div>
 

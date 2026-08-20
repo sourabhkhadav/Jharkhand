@@ -6,6 +6,7 @@ import CartDrawer from './components/CartDrawer';
 import AuthModal from './components/AuthModal';
 import BookingModal from './components/BookingModal';
 import ReviewModal from './components/ReviewModal';
+import VoiceAssistantModal from './components/VoiceAssistantModal';
 
 import LandingPage from './pages/LandingPage';
 import ExplorePage from './pages/ExplorePage';
@@ -17,6 +18,10 @@ import SafetyPage from './pages/SafetyPage';
 import UserProfilePage from './pages/UserProfilePage';
 import FestivalsPage from './pages/FestivalsPage';
 import SearchResultsPage from './pages/SearchResultsPage';
+import FeedbackPage from './pages/FeedbackPage';
+import ArrivalGuidePage from './pages/ArrivalGuidePage';
+import LostFoundPage from './pages/LostFoundPage';
+import KnowYourCraftPage from './pages/KnowYourCraftPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -31,6 +36,7 @@ export default function App() {
     ]);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isAuthOpen, setIsAuthOpen] = useState(false);
+    const [isVoiceOpen, setIsVoiceOpen] = useState(false);
     const [bookingItem, setBookingItem] = useState(null);
     const [reviewDestinationName, setReviewDestinationName] = useState(null);
 
@@ -57,12 +63,13 @@ export default function App() {
                     cartCount={cartItems.length}
                     onOpenCart={() => setIsCartOpen(true)}
                     onOpenAuth={() => setIsAuthOpen(true)}
+                    onOpenVoice={() => setIsVoiceOpen(true)}
                 />
 
                 {/* Main Content Router */}
                 <main className="flex-1">
                     <Routes>
-                        <Route path="/" element={<LandingPage onOpenBooking={setBookingItem} />} />
+                        <Route path="/" element={<LandingPage onOpenBooking={setBookingItem} onOpenVoice={() => setIsVoiceOpen(true)} />} />
                         <Route path="/explore" element={<ExplorePage />} />
                         <Route
                             path="/place/:id"
@@ -77,6 +84,10 @@ export default function App() {
                         <Route path="/booking" element={<BookingPage onOpenBooking={setBookingItem} />} />
                         <Route path="/marketplace" element={<MarketplacePage onAddToCart={handleAddToCart} />} />
                         <Route path="/safety" element={<SafetyPage />} />
+                        <Route path="/feedback" element={<FeedbackPage />} />
+                        <Route path="/arrival-guide" element={<ArrivalGuidePage />} />
+                        <Route path="/lost-found" element={<LostFoundPage />} />
+                        <Route path="/know-your-craft" element={<KnowYourCraftPage />} />
                         <Route path="/profile" element={<UserProfilePage />} />
                         <Route path="/festivals" element={<FestivalsPage />} />
                         <Route path="/search" element={<SearchResultsPage />} />
@@ -99,6 +110,11 @@ export default function App() {
                 <AuthModal
                     isOpen={isAuthOpen}
                     onClose={() => setIsAuthOpen(false)}
+                />
+
+                <VoiceAssistantModal
+                    isOpen={isVoiceOpen}
+                    onClose={() => setIsVoiceOpen(false)}
                 />
 
                 <BookingModal
