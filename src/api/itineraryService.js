@@ -397,7 +397,7 @@ export async function generateLiveItinerary({ experiences = [], days = 3, hub = 
 
     // Get Env Keys
     const openTripMapKey = import.meta.env.VITE_OPENTRIPMAP_API_KEY || '5ae2e3f221c38a28845f05b69544f4040f76afe9851bdb431ca253e6';
-    const groqKey = import.meta.env.VITE_GROQ_API_KEY || (typeof window !== 'undefined' && window.atob ? window.atob('Z3NrX3VrWktOaHpmOXhhamRDZWYwaXdHV2R5YnJGWVNvUjNDQ0kzZU0wS1lVWmhvbnBIZ2FkcA==') : '');
+    const geminiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
     const hubCoords = HUB_COORDINATES[hub] || HUB_COORDINATES['Ranchi'];
 
@@ -406,8 +406,8 @@ export async function generateLiveItinerary({ experiences = [], days = 3, hub = 
 
     const baseStayPrice = budgetTier === 'economy' ? 1800 : budgetTier === 'luxury' ? 6800 : 3400;
 
-    // Step 2: Call Groq API
-    if (groqKey) {
+    // Step 2: Call Gemini API (Replacing legacy Groq / OpenAI compatible API calls)
+    if (geminiKey) {
         try {
             const systemPrompt = `You are an expert travel planner for Jharkhand, India. 
 Generate a realistic ${days}-day day-wise itinerary starting from ${hub}, along with recommended authentic local hotels/homestays with realistic rates (pricePerNight in INR), and an itemized overall budget breakdown.
@@ -469,26 +469,30 @@ Return ONLY a single valid JSON object matching this exact schema (no markdown, 
   }
 }`;
 
-            const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${geminiKey}`;
+            const res = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${groqKey}`
                 },
                 body: JSON.stringify({
-                    model: 'llama-3.3-70b-versatile',
-                    response_format: { type: 'json_object' },
-                    messages: [
-                        { role: 'system', content: systemPrompt },
-                        { role: 'user', content: `Generate ${days}-day itinerary with unique non-repeating stops, hotels, and budget breakdown now.` }
+                    contents: [
+                        {
+                            parts: [
+                                { text: systemPrompt },
+                                { text: `Generate ${days}-day itinerary JSON now. Output only raw JSON.` }
+                            ]
+                        }
                     ],
-                    temperature: 0.2
+                    generationConfig: {
+                        responseMimeType: "application/json"
+                    }
                 })
             });
 
             if (res.ok) {
-                const groqData = await res.json();
-                const content = groqData.choices?.[0]?.message?.content || '';
+                const data = await res.json();
+                const content = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
                 const cleaned = content.replace(/```json/g, '').replace(/```/g, '').trim();
                 const parsed = JSON.parse(cleaned);
 
@@ -520,7 +524,7 @@ Return ONLY a single valid JSON object matching this exact schema (no markdown, 
                 }
             }
         } catch (err) {
-            console.warn('[Groq API] Exception, falling back to algorithmic generator:', err);
+            console.warn('[Gemini API] Exception, falling back to algorithmic generator:', err);
         }
     }
 

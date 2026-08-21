@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mic, MicOff, Volume2, VolumeX, Sparkles, X, Compass, ShieldAlert, MapPin, Search, BookOpen, SearchCheck, PackageSearch } from 'lucide-react';
+import { getVoiceResponse } from '../data/voiceAssistantData';
+import { askGeminiVoiceAssistant } from '../api/geminiService';
 
 export default function VoiceAssistantModal({ isOpen, onClose }) {
     const [isListening, setIsListening] = useState(false);
@@ -9,6 +11,7 @@ export default function VoiceAssistantModal({ isOpen, onClose }) {
     const [language, setLanguage] = useState('hi-IN'); // 'hi-IN' | 'en-US'
     const [isSpeaking, setIsSpeaking] = useState(false);
     const navigate = useNavigate();
+    const redirectTimeoutRef = useRef(null);
 
     const SAMPLE_QUICK_COMMANDS = [
         { label: "🏛️ Baidyanath Dham history", command: "Baidyanath Dham ki history batao", path: "/place/baidyanath-dham" },
@@ -46,6 +49,15 @@ export default function VoiceAssistantModal({ isOpen, onClose }) {
         };
     }, [language]);
 
+    // Clean up timeout on modal unmount
+    useEffect(() => {
+        return () => {
+            if (redirectTimeoutRef.current) {
+                clearTimeout(redirectTimeoutRef.current);
+            }
+        };
+    }, []);
+
     const speakText = (text) => {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
@@ -64,9 +76,18 @@ export default function VoiceAssistantModal({ isOpen, onClose }) {
             window.speechSynthesis.cancel();
             setIsSpeaking(false);
         }
+        if (redirectTimeoutRef.current) {
+            clearTimeout(redirectTimeoutRef.current);
+            redirectTimeoutRef.current = null;
+        }
     };
 
     const toggleListening = () => {
+        if (isSpeaking) {
+            stopSpeech();
+            return;
+        }
+
         if (isListening) {
             setIsListening(false);
         } else {
@@ -104,39 +125,46 @@ export default function VoiceAssistantModal({ isOpen, onClose }) {
         }, 2200);
     };
 
-    const handleVoiceAction = (query) => {
-        const q = query.toLowerCase();
-        let response = "";
-        let redirectPath = "";
+    const handleVoiceAction = async (query) => {
+        // Clear any existing redirect timeout first
+        if (redirectTimeoutRef.current) {
+            clearTimeout(redirectTimeoutRef.current);
+            redirectTimeoutRef.current = null;
+        }
 
-        if (q.includes("history") || q.includes("baidyanath") || q.includes("mandir") || q.includes("temple")) {
-            response = "Baidyanath Dham 1596 AD me Raja Puran Mal dwara banwaya gaya tha. Ye 12 Jyotirlinga me se ek hai. Aapko detail page pe le ja rahe hain.";
-            redirectPath = "/place/baidyanath-dham";
-        } else if (q.includes("trash") || q.includes("report") || q.includes("complaint") || q.includes("clean") || q.includes("issue")) {
-            response = "Public Grievance Portal me aapka swagat hai. Aap photo upload karke issue report kar sakte hain. Govt fast action legi.";
-            redirectPath = "/feedback";
-        } else if (q.includes("station") || q.includes("auto") || q.includes("atm") || q.includes("ranchi") || q.includes("bus")) {
-            response = "Real-Time Station Guide par navigate kar rahe hain. Waha aapko nearest ATM, distance aur travel cost dikhega.";
-            redirectPath = "/arrival-guide";
-        } else if (q.includes("craft") || q.includes("art") || q.includes("sohrai") || q.includes("scan") || q.includes("paint")) {
-            response = "Know Your Craft scanner khol rahe hain. Photo upload karke tribal art ki complete details dekhein.";
-            redirectPath = "/know-your-craft";
-        } else if (q.includes("lost") || q.includes("found") || q.includes("bag") || q.includes("wallet")) {
-            response = "Lost and Found hub me aap lost item report kar sakte hain ya claims find kar sakte hain.";
-            redirectPath = "/lost-found";
+        setIsListening(false);
+        setAssistantResponse(language === 'hi-IN' ? "AI soch raha hai..." : "Thinking...");
+
+        let result;
+        const geminiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+        if (geminiKey && navigator.onLine) {
+            try {
+                result = await askGeminiVoiceAssistant(query, language);
+            } catch (err) {
+                console.warn("Gemini API call failed, falling back to local resolver:", err);
+                result = getVoiceResponse(query, language);
+            }
         } else {
-            response = `Samajh gaye! "${query}" ke liye Explore Jharkhand portal search results par le ja rahe hain.`;
-            redirectPath = `/search?q=${encodeURIComponent(query)}`;
+            result = getVoiceResponse(query, language);
+        }
+
+        const { response, redirectPath, isStopCommand } = result;
+
+        if (isStopCommand) {
+            stopSpeech();
+            setAssistantResponse(response);
+            return; // Interdict redirect or further speech execution
         }
 
         setAssistantResponse(response);
         speakText(response);
 
         if (redirectPath) {
-            setTimeout(() => {
+            redirectTimeoutRef.current = setTimeout(() => {
                 onClose();
                 navigate(redirectPath);
-            }, 3000);
+            }, 5500); // Increased checkout time so voice playback has enough time to finish speaking
         }
     };
 
