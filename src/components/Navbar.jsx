@@ -18,12 +18,12 @@ export default function Navbar({ cartCount = 0, onOpenCart, onOpenAuth, onOpenVo
 
     const navLinks = [
         { path: '/explore', label: 'Explore Directory' },
-        { path: '/arrival-guide', label: 'Station Guide' },
-        { path: '/know-your-craft', label: 'Tribal Craft AI' },
-        { path: '/feedback', label: 'Help & Support' },
-        { path: '/lost-found', label: 'Lost & Found' },
+        { path: '/stays', label: 'Hotels & Stays' },
         { path: '/planner', label: 'AI Itinerary' },
         { path: '/marketplace', label: 'Artisan Market' },
+        { path: '/arrival-guide', label: 'Station Guide' },
+        { path: '/lost-found', label: 'Lost & Found' },
+        { path: '/feedback', label: 'Help & Support' },
     ];
 
     return (

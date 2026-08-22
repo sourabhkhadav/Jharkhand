@@ -22,6 +22,7 @@ import FeedbackPage from './pages/FeedbackPage';
 import ArrivalGuidePage from './pages/ArrivalGuidePage';
 import LostFoundPage from './pages/LostFoundPage';
 import KnowYourCraftPage from './pages/KnowYourCraftPage';
+import StaysPage from './pages/StaysPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -82,12 +83,13 @@ export default function App() {
                         />
                         <Route path="/planner" element={<ItineraryPlannerPage onOpenBooking={setBookingItem} />} />
                         <Route path="/booking" element={<BookingPage onOpenBooking={setBookingItem} />} />
+                        <Route path="/stays" element={<StaysPage onOpenBooking={setBookingItem} />} />
                         <Route path="/marketplace" element={<MarketplacePage onAddToCart={handleAddToCart} />} />
                         <Route path="/safety" element={<SafetyPage />} />
                         <Route path="/feedback" element={<FeedbackPage />} />
                         <Route path="/arrival-guide" element={<ArrivalGuidePage />} />
                         <Route path="/lost-found" element={<LostFoundPage />} />
-                        <Route path="/know-your-craft" element={<KnowYourCraftPage />} />
+                        <Route path="/know-your-craft" element={<KnowYourCraftPage onAddToCart={handleAddToCart} />} />
                         <Route path="/profile" element={<UserProfilePage />} />
                         <Route path="/festivals" element={<FestivalsPage />} />
                         <Route path="/search" element={<SearchResultsPage />} />
