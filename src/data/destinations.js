@@ -141,9 +141,9 @@ export const DESTINATIONS = [
         distanceKm: 35,
         tagline: "Winding serpentine hairpin curves overlooking a sprawling emerald reservoir.",
         description: "Famous for its mesmerizing winding mountain roads reminiscent of European alpine passes, Patratu Valley leads down to a massive dam reservoir offering speedboat rides, floating restaurants, and island eco-parks.",
-        heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/patratu-valley.png",
         images: [
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/patratu-valley.png"
         ],
         bestTime: "September to March",
         entryFee: "₹30 for Dam Park",
@@ -207,9 +207,9 @@ export const DESTINATIONS = [
         distanceKm: 156,
         tagline: "Serene hill station perched at 3,700 ft surrounded by pine and sal valleys.",
         description: "Netarhat is Jharkhand's premier hill destination, famed for its breathtaking Magnolia Sunset Point, Pine Forests, and crisp mountain breeze. Perched high on the Chotanagpur plateau, it offers an unspoiled retreat into pristine forests.",
-        heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/netarhat.png",
         images: [
-            "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/netarhat.png"
         ],
         bestTime: "Year-Round",
         entryFee: "Free",
@@ -273,9 +273,9 @@ export const DESTINATIONS = [
         distanceKm: 65,
         tagline: "Ancient Shakti Peeth temple at the sacred confluence of Damodar & Bhairavi rivers.",
         description: "Maa Chhinnamastika Temple at Rajrappa is one of the ten Mahavidyas and a major Tantric Shakti Peeth in India. Located on a hillock where the Damodar and Bhairavi rivers meet, creating a mesmerizing natural river gorge backdrop.",
-        heroImage: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/rajrappa-temple.png",
         images: [
-            "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/rajrappa-temple.png"
         ],
         bestTime: "October to March",
         entryFee: "Free",
@@ -306,9 +306,9 @@ export const DESTINATIONS = [
         distanceKm: 215,
         tagline: "Massive blue water reservoir on Barakar river with speedboating & Deer Park.",
         description: "Designed specifically for flood control and hydroelectric power generation under Damodar Valley Corporation (DVC), Maithon Dam ('Mother's Abode') spans a massive blue water lake with surrounding green hills, island eco-parks, and deer sanctuaries.",
-        heroImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/maithon-dam.png",
         images: [
-            "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/maithon-dam.png"
         ],
         bestTime: "October to March",
         entryFee: "Free (Boating ₹100-300)",
@@ -339,9 +339,9 @@ export const DESTINATIONS = [
         distanceKm: 12,
         tagline: "1691 AD hill temple built by Nagvanshi King resembling Puri Jagannath Temple.",
         description: "Built in 1691 AD by King Anek Nath Shahdeo, Ranchi Jagannath Temple sits atop a scenic hillock in Dhurwa. Architectural replica of the world-famous Puri Jagannath Temple, it hosts the annual Rath Yatra festival drawing thousands of pilgrims.",
-        heroImage: "https://images.unsplash.com/photo-1621831971412-d227f425b035?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/ranchi-jagannath-temple.png",
         images: [
-            "https://images.unsplash.com/photo-1621831971412-d227f425b035?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/ranchi-jagannath-temple.png"
         ],
         bestTime: "Year-Round (Rath Yatra in July)",
         entryFee: "Free",
@@ -372,9 +372,9 @@ export const DESTINATIONS = [
         distanceKm: 60,
         tagline: "World's only Anglo-Indian mini-England colonial village nestled in pine hills.",
         description: "Founded in 1933 by Timothy McCluskie, McCluskieganj was established as a dream homeland settlement for the Anglo-Indian community. Nestled amidst sal forests and pine rivulets, it features vintage British brick bungalows and quiet country lanes.",
-        heroImage: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/mccluskieganj.png",
         images: [
-            "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/mccluskieganj.png"
         ],
         bestTime: "October to March",
         entryFee: "Free",
@@ -405,9 +405,9 @@ export const DESTINATIONS = [
         distanceKm: 280,
         tagline: "Picturesque turquoise lake on Mayurakshi River built with Canadian aid in 1955.",
         description: "Situated in Dumka district near the West Bengal border, Massanjore Dam (popularly called Canada Dam) impounds the Mayurakshi River amidst surrounding green rolling hills, featuring turquoise blue waters and flower gardens.",
-        heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/massanjore-dam.png",
         images: [
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/massanjore-dam.png"
         ],
         bestTime: "October to March",
         entryFee: "Free",
@@ -438,9 +438,9 @@ export const DESTINATIONS = [
         distanceKm: 160,
         tagline: "Highest peak of Jharkhand (4,478 ft) and sacred Jain pilgrimage destination.",
         description: "Parasnath Hill is the tallest mountain peak in Jharkhand state. Revered as Shikharji, 20 out of 24 Jain Tirthankaras attained Moksha (liberation) here. The 27-km mountain trek passes through cloud forests, stone stupas, and ancient marble temples.",
-        heroImage: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/parasnath-shikharji.png",
         images: [
-            "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/parasnath-shikharji.png"
         ],
         bestTime: "October to March",
         entryFee: "Free",
@@ -471,9 +471,9 @@ export const DESTINATIONS = [
         distanceKm: 95,
         tagline: "Living museum of UNESCO-acknowledged indigenous Sohrai-Khovar mud mural art.",
         description: "Enter rural villages around Hazaribagh where Santhal, Munda, and Kurmi tribal women paint mud cottage walls with natural earth pigments depicting flora, fauna, and fertility symbols during harvest season.",
-        heroImage: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/sohrai-tribal-village.png",
         images: [
-            "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/sohrai-tribal-village.png"
         ],
         bestTime: "October to February",
         entryFee: "Free (Donations to artisans welcomed)",
