@@ -9,10 +9,9 @@ export const DESTINATIONS = [
         distanceKm: 45,
         tagline: "Jharkhand's spectacular 320 ft cascading leap over the Subarnarekha River.",
         description: "Located on the Subarnarekha River, Hundru Falls drops from a height of 98 metres (320 ft), creating one of the most breathtaking natural spectacles in Eastern India. Surrounded by dense chhatra forests, the falling water forms a serene pool at the base ideal for eco-tourists and nature lovers.",
-        heroImage: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/waterfalls/hundru-falls.png",
         images: [
-            "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80"
+            "/images/waterfalls/hundru-falls.png"
         ],
         bestTime: "October to March",
         entryFee: "₹20 per person",
@@ -43,9 +42,9 @@ export const DESTINATIONS = [
         distanceKm: 195,
         tagline: "Highest waterfall in Jharkhand dropping 469 ft inside deep tiger canopy.",
         description: "Lodh Falls (also known as Burha Falls) is the highest waterfall in Jharkhand state and the 21st highest in India, dropping 143 metres (469 ft) in multiple roaring tiers over the Burha River inside the dense Palamu forest sanctuary.",
-        heroImage: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/waterfalls/lodh-falls.jpg",
         images: [
-            "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80"
+            "/images/waterfalls/lodh-falls.jpg"
         ],
         bestTime: "September to March",
         entryFee: "₹30",
@@ -76,9 +75,9 @@ export const DESTINATIONS = [
         distanceKm: 34,
         tagline: "144 ft roaring cascade of Kanchi river flowing into ten stream channels.",
         description: "Derived from 'Da-song' in Mundari language meaning water pouring out, Dassam Falls tumbles down 44 metres through steep rocky cliffs into a wild river gorge, surrounded by thick teak trees.",
-        heroImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/waterfalls/dassam-falls.jpg",
         images: [
-            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
+            "/images/waterfalls/dassam-falls.jpg"
         ],
         bestTime: "October to March",
         entryFee: "₹15",
@@ -109,9 +108,9 @@ export const DESTINATIONS = [
         distanceKm: 40,
         tagline: "Sacred waterfall steps where Lord Buddha is believed to have bathed.",
         description: "Surrounded by dense forest cover, Jonha Falls cascades down 43 metres over natural rock steps. Nearby stands a serene Buddhist ashram and temple dedicated to Gautam Buddha.",
-        heroImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/waterfalls/jonha-falls.png",
         images: [
-            "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80"
+            "/images/waterfalls/jonha-falls.png"
         ],
         bestTime: "October to March",
         entryFee: "₹10",
@@ -571,9 +570,9 @@ export const DESTINATIONS = [
         distanceKm: 70,
         tagline: "37-metre roaring jungle waterfall surrounded by dense sal trees and rock pools.",
         description: "Situated in the middle of dense sal forests on Ramgarha River, Hirni Falls cascades down 37 metres over jagged metamorphic rocks into a clear pool, featuring a watchtower with panoramic forest views.",
-        heroImage: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/waterfalls/hirni-falls.png",
         images: [
-            "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80"
+            "/images/waterfalls/hirni-falls.png"
         ],
         bestTime: "October to March",
         entryFee: "₹15",
