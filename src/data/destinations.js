@@ -174,9 +174,9 @@ export const DESTINATIONS = [
         distanceKm: 165,
         tagline: "One of India's earliest tiger reserves with ancient Chero Dynasty forts inside.",
         description: "Spanning over 1,000 sq km of lush sal and bamboo forests, Betla was among the first sanctuaries in India to come under Project Tiger in 1973. It is home to wild elephants, tigers, leopards, Indian bison (gaur), and over 170 bird species.",
-        heroImage: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/betla-national-park.png",
         images: [
-            "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/betla-national-park.png"
         ],
         bestTime: "November to May",
         entryFee: "₹100 (Safari extra)",
@@ -240,9 +240,9 @@ export const DESTINATIONS = [
         distanceKm: 250,
         tagline: "Sacred 12 Jyotirlinga shrine revered by millions of pilgrims worldwide.",
         description: "Baba Baidyanath Dham in Deoghar is one of the twelve revered Jyotirlingas of Lord Shiva in India. Famous for the annual Shravani Mela, where millions of devotees carry holy Ganga water from Sultanganj barefoot to offer to the deity.",
-        heroImage: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/baidyanath-dham.png",
         images: [
-            "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/baidyanath-dham.png"
         ],
         bestTime: "October to March (or July-Aug for Mela)",
         entryFee: "Free Entry",
@@ -504,9 +504,9 @@ export const DESTINATIONS = [
         distanceKm: 18,
         tagline: "Serene elephant sanctuary hilltop overlooking the steel city of Jamshedpur.",
         description: "Perched on the Dalma mountain range at 3,000 ft, Dalma Wildlife Sanctuary is renowned for its wild Asian elephant population, Hanuman langurs, bark deer, and Hanuman temple peak overlooking Subarnarekha River.",
-        heroImage: "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1200&q=80",
+        heroImage: "/images/destinations/dalma-wildlife-sanctuary.png",
         images: [
-            "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1000&q=80"
+            "/images/destinations/dalma-wildlife-sanctuary.png"
         ],
         bestTime: "October to June",
         entryFee: "₹50 per person",
